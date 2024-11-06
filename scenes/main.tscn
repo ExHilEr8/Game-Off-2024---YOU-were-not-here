@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6wssjqpvgufy"]
 
-[ext_resource type="Texture2D" uid="uid://vf367vdgqeri" path="res://assets/sprites/robber.png" id="1_mlooy"]
+[ext_resource type="Texture2D" uid="uid://co1hsldqffgio" path="res://assets/sprites/robber.png" id="1_mlooy"]
 
 [node name="Robber" type="Sprite2D"]
 position = Vector2(74, 62)
