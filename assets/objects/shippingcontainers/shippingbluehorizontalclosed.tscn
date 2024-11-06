@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ks20yib1bk4e"]
+
+[ext_resource type="Texture2D" uid="uid://ikvh6sbqb0ww" path="res://assets/objects/shippingcontainers/shippingbluehorizontalclosed.png" id="1_pb2hm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
+size = Vector2(80, 24.25)
+
+[node name="Shippingbluehorizontalclosed" type="StaticBody2D"]
+
+[node name="Shippingbluehorizontalinside" type="Sprite2D" parent="."]
+texture = ExtResource("1_pb2hm")
+offset = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_lskki")
