@@ -31,3 +31,4 @@ project/assembly_name="Game Off 2024 - You Were Not Here"
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_s3tc_bptc=true
 textures/lossless_compression/force_png=true
+2d/snap/snap_2d_transforms_to_pixel=true
