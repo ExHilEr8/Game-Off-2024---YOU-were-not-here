@@ -3,5 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://vf367vdgqeri" path="res://assets/sprites/robber.png" id="1_mlooy"]
 
 [node name="Robber" type="Sprite2D"]
-position = Vector2(775, 404)
+position = Vector2(74, 62)
 texture = ExtResource("1_mlooy")
