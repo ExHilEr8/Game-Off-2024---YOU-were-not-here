@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckfr4aq7owr60"]
+
+[ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_hdxn4"]
+[ext_resource type="Texture2D" uid="uid://co1hsldqffgio" path="res://assets/sprites/robber.png" id="2_mhhs4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu6xg"]
+radius = 5.30974
+height = 10.6195
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+position = Vector2(148, 36)
+collision_layer = 2
+script = ExtResource("1_hdxn4")
+sprite = NodePath("Sprite")
+walking_speed = 100.0
+sprinting_speed = 150.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_mhhs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(0.565, 0.565)
+shape = SubResource("CapsuleShape2D_fu6xg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
