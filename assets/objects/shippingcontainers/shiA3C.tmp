@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ks20yib1bk4e"]
+[gd_scene load_steps=6 format=3 uid="uid://ks20yib1bk4e"]
 
 [ext_resource type="Texture2D" uid="uid://ikvh6sbqb0ww" path="res://assets/objects/shippingcontainers/shippingbluehorizontalclosed.png" id="1_pb2hm"]
 [ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_gehce"]
@@ -6,31 +6,32 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(80, 24.25)
 
+[sub_resource type="Curve" id="Curve_ew7pu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.199017, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
 size = Vector2(80, 17)
 
-[node name="Shippingbluehorizontalclosed" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_pb2hm")
 offset = Vector2(0, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Shippingbluehorizontalclosed" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shippingbluehorizontalclosed"]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_lskki")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
 collision_mask = 3
 script = ExtResource("2_gehce")
-sprite = NodePath("../Sprite2D")
-entered_opacity = null
-entered_time = null
-entered_ease_type = null
-exited_opacity = null
-exited_time = null
-exited_ease_type = null
+sprite = NodePath("../Sprite")
+opacity = null
+opacity_time_curve_in = SubResource("Curve_ew7pu")
+opacity_time_curve_out = SubResource("Curve_ew7pu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -11)
