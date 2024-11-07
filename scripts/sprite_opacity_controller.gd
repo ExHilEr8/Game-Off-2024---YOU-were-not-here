@@ -19,7 +19,6 @@ func _on_body_entered(body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, entered_opacity)
 	tween_modulate(body, color, entered_time, entered_ease_type)
 
-
 func _on_body_exited(body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, exited_opacity)
 	tween_modulate(body, color, exited_time, exited_ease_type)
