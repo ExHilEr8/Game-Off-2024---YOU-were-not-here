@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=4 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
+[ext_resource type="PackedScene" uid="uid://dvng1f5ismuw3" path="res://assets/objects/shippingcontainers/shippingbluehorizontalopen.tscn" id="3_gs2sb"]
 [ext_resource type="PackedScene" uid="uid://ks20yib1bk4e" path="res://assets/objects/shippingcontainers/shippingbluehorizontalclosed.tscn" id="3_heyql"]
 
 [node name="Node" type="Node2D"]
@@ -10,3 +11,6 @@ y_sort_enabled = true
 
 [node name="Shippingbluehorizontalclosed" parent="." instance=ExtResource("3_heyql")]
 position = Vector2(35, 11)
+
+[node name="Shippingbluehorizontalopen" parent="." instance=ExtResource("3_gs2sb")]
+position = Vector2(84, 75)
