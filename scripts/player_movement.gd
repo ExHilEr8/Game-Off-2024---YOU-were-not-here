@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var character_direction : Vector2
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var speed = walking_speed
 	
 	if(Input.is_action_pressed("sprint")):
