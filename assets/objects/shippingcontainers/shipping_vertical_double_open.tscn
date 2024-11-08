@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfxqmpby2dp08"]
+
+[ext_resource type="Texture2D" uid="uid://cx3cngm2a3ung" path="res://assets/objects/shippingcontainers/finished/shippingblueverticaldoubleinside.png" id="1_i2dex"]
+[ext_resource type="Texture2D" uid="uid://cm3ssm86e8kup" path="res://assets/objects/shippingcontainers/finished/shippingblueverticaldoubleopen.png" id="2_64lu1"]
+[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="3_ld5vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuu4g"]
+size = Vector2(2, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oawy"]
+size = Vector2(16, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv8ve"]
+size = Vector2(16, 74)
+
+[node name="ShippingVerticalDoubleOpen" type="Node2D"]
+z_index = -1
+position = Vector2(0, 74)
+
+[node name="Sprite2DInside" type="Sprite2D" parent="."]
+position = Vector2(1, -37)
+texture = ExtResource("1_i2dex")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -38)
+texture = ExtResource("2_64lu1")
+offset = Vector2(0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 4)
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-13, -33)
+shape = SubResource("RectangleShape2D_cuu4g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16, -33)
+shape = SubResource("RectangleShape2D_cuu4g")
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
+position = Vector2(1, -96)
+collision_mask = 22
+script = ExtResource("3_ld5vd")
+main_sprite = NodePath("../Sprite2D")
+entered_opacity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, 59)
+shape = SubResource("RectangleShape2D_7oawy")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 59)
+shape = SubResource("RectangleShape2D_nv8ve")
+debug_color = Color(0.886275, 0.27451, 0.462745, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ks20yib1bk4e"]
 
 [ext_resource type="Texture2D" uid="uid://ikvh6sbqb0ww" path="res://assets/objects/shippingcontainers/finished/shippingbluehorizontalclosed.png" id="1_pb2hm"]
-[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_ecspn"]
+[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_mtagi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(80, 24.25)
@@ -9,7 +9,7 @@ size = Vector2(80, 24.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
 size = Vector2(80, 17)
 
-[node name="ShippingBlueHorizontalClosed" type="Node2D"]
+[node name="ShippingHorizontalClosed" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pb2hm")
@@ -24,7 +24,7 @@ shape = SubResource("RectangleShape2D_lskki")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
 collision_mask = 6
-script = ExtResource("2_ecspn")
+script = ExtResource("2_mtagi")
 main_sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

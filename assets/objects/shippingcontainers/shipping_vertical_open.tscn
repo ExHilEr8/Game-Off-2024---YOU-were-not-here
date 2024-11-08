@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://4nppadb6xsm0"]
+[gd_scene load_steps=12 format=3 uid="uid://4nppadb6xsm0"]
 
 [ext_resource type="Texture2D" uid="uid://3k6uo6pregjb" path="res://assets/objects/shippingcontainers/finished/shippingblueverticalinside.png" id="1_42gmu"]
 [ext_resource type="Texture2D" uid="uid://duryptumsjo37" path="res://assets/objects/shippingcontainers/finished/shippingblueverticalopen.png" id="2_gqybr"]
 [ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="3_1r8h2"]
+[ext_resource type="Script" path="res://scripts/inside_sprite_opacity_controller.gd" id="4_lv5jy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_555ws"]
 size = Vector2(2, 56)
@@ -17,7 +18,7 @@ size = Vector2(8, 2)
 size = Vector2(28, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
-size = Vector2(31, 17)
+size = Vector2(16, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db1oh"]
 size = Vector2(13.8867, 53.1658)
@@ -25,7 +26,7 @@ size = Vector2(13.8867, 53.1658)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8grq"]
 size = Vector2(13.4312, 53.1658)
 
-[node name="ShippingBlueVerticalOpen" type="Node2D"]
+[node name="ShippingVerticalOpen" type="Node2D"]
 position = Vector2(0, 33)
 
 [node name="Sprite2DInside" type="Sprite2D" parent="."]
@@ -67,28 +68,31 @@ shape = SubResource("RectangleShape2D_fejgt")
 position = Vector2(1, -18)
 shape = SubResource("RectangleShape2D_0kega")
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "opposite_sprite")]
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "inside_controller")]
 position = Vector2(1, -54)
 collision_mask = 6
 script = ExtResource("3_1r8h2")
 main_sprite = NodePath("../Sprite2D")
-opposite_sprite = NodePath("../Sprite2DInside")
+inside_controller = NodePath("../Area2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 29.5)
+position = Vector2(-8, 31)
 shape = SubResource("RectangleShape2D_mnwqj")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
-[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "opposite_sprite")]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, 31)
+shape = SubResource("RectangleShape2D_mnwqj")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("inside_sprite", "sprite_controller", "main_sprite", "inside_controller")]
 scale = Vector2(1.00816, 1.01732)
 collision_mask = 6
-script = ExtResource("3_1r8h2")
+script = ExtResource("4_lv5jy")
+inside_sprite = NodePath("../Sprite2DInside")
+sprite_controller = NodePath("../Area2D")
 main_sprite = NodePath("../Sprite2D")
-opposite_sprite = NodePath("../Sprite2DInside")
-is_inside = true
-entered_opacity = 0.0
-entered_time = 0.05
-exited_time = 0.1
+inside_controller = NodePath(".")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-6.94334, 13.8042)
@@ -98,7 +102,6 @@ debug_color = Color(0.492441, 0.57594, 0.274899, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(6.94334, 13.8042)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_s8grq")
 debug_color = Color(0.494118, 0.576471, 0.27451, 0.419608)
 
