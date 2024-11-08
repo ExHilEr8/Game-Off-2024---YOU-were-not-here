@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=7 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
-[ext_resource type="PackedScene" uid="uid://dvng1f5ismuw3" path="res://assets/objects/shippingcontainers/shippingbluehorizontalopen.tscn" id="3_gs2sb"]
-[ext_resource type="PackedScene" uid="uid://ks20yib1bk4e" path="res://assets/objects/shippingcontainers/shippingbluehorizontalclosed.tscn" id="3_heyql"]
+[ext_resource type="PackedScene" uid="uid://dvng1f5ismuw3" path="res://assets/objects/shippingcontainers/shipping_blue_horizontal_open.tscn" id="3_gs2sb"]
+[ext_resource type="PackedScene" uid="uid://ks20yib1bk4e" path="res://assets/objects/shippingcontainers/shipping_blue_horizontal_closed.tscn" id="3_heyql"]
+[ext_resource type="PackedScene" uid="uid://blmd0ho8cf5gd" path="res://assets/objects/shippingcontainers/shipping_blue_vertical_closed.tscn" id="4_n63nw"]
+[ext_resource type="PackedScene" uid="uid://dfxqmpby2dp08" path="res://assets/objects/shippingcontainers/shipping_blue_vertical_double_open.tscn" id="5_s84e2"]
+[ext_resource type="PackedScene" uid="uid://4nppadb6xsm0" path="res://assets/objects/shippingcontainers/shipping_blue_vertical_open.tscn" id="6_a805f"]
 
 [node name="Node" type="Node2D"]
 y_sort_enabled = true
@@ -14,3 +17,12 @@ position = Vector2(35, 11)
 
 [node name="Shippingbluehorizontalopen" parent="." instance=ExtResource("3_gs2sb")]
 position = Vector2(84, 75)
+
+[node name="Shippingbluehorizontalclosed2" parent="." instance=ExtResource("4_n63nw")]
+position = Vector2(6, 148)
+
+[node name="Shippingblueverticaldoubleopen" parent="." instance=ExtResource("5_s84e2")]
+position = Vector2(-47, 150)
+
+[node name="Shippingbluehorizontalopen2" parent="." instance=ExtResource("6_a805f")]
+position = Vector2(-96, 112)
