@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbl02n02d5ly0"]
+
+[ext_resource type="Texture2D" uid="uid://cy3d8r1a31nxa" path="res://assets/objects/shippingcontainers/shipping_container_assets/shippingredhorizontalinside.png" id="1_hi07p"]
+[ext_resource type="Texture2D" uid="uid://dyjls83gqhfw0" path="res://assets/objects/shippingcontainers/shipping_container_assets/shippingredhorizontalopen.png" id="2_3gfw3"]
+[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="3_qm271"]
+[ext_resource type="Script" path="res://scripts/inside_sprite_opacity_controller.gd" id="4_68upk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
+size = Vector2(80, 2.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nygch"]
+size = Vector2(2.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjobf"]
+size = Vector2(3.25, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n0ui"]
+size = Vector2(92, 2.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
+size = Vector2(92, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db1oh"]
+size = Vector2(74, 20)
+
+[node name="ShippingRedHorizontalOpen" type="Node2D"]
+
+[node name="Sprite2DInside" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 4.5)
+texture = ExtResource("1_hi07p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("2_3gfw3")
+offset = Vector2(0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 4)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6, 21.0625)
+shape = SubResource("RectangleShape2D_lskki")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(45, 10)
+shape = SubResource("RectangleShape2D_nygch")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-32, 15)
+shape = SubResource("RectangleShape2D_fjobf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_8n0ui")
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "inside_controller")]
+position = Vector2(1, 4)
+scale = Vector2(1, 1.00518)
+collision_mask = 22
+script = ExtResource("3_qm271")
+main_sprite = NodePath("../Sprite2D")
+inside_controller = NodePath("../Area2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -11)
+shape = SubResource("RectangleShape2D_mnwqj")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("inside_sprite", "sprite_controller", "main_sprite")]
+scale = Vector2(1.0034, 1.01732)
+collision_mask = 22
+script = ExtResource("4_68upk")
+inside_sprite = NodePath("../Sprite2DInside")
+sprite_controller = NodePath("../Area2D")
+main_sprite = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(6, 14)
+shape = SubResource("RectangleShape2D_db1oh")
+debug_color = Color(0.492441, 0.57594, 0.274899, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

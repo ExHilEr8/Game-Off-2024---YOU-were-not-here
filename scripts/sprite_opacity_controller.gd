@@ -17,7 +17,7 @@ class_name OpacityController
 
 var tween : Tween
 
-func _on_body_entered(body:Node2D):
+func _on_body_entered(_body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, entered_opacity)
 	tween_modulate(tween, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
 

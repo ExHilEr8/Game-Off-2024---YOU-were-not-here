@@ -4,7 +4,7 @@ extends OpacityController
 @export var inside_sprite : Sprite2D
 @export var sprite_controller : Area2D
 
-func _on_body_entered(body:Node2D):
+func _on_body_entered(_body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, 1.0)
 	tween_modulate(tween, inside_sprite, color, 0, entered_ease_type)
 	tween_modulate(sprite_controller.tween, main_sprite, Color(1.0, 1.0, 1.0, 0.0), entered_transition_time_seconds, entered_ease_type)

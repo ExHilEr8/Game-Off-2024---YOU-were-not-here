@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://y6f7abjfcmk4"]
+
+[ext_resource type="Texture2D" uid="uid://b2r0ii8mskvgb" path="res://assets/objects/shippingcontainers/shipping_container_assets/shippingredhorizontalclosed.png" id="1_yc37e"]
+[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_qqgj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
+size = Vector2(80, 24.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
+size = Vector2(80, 17)
+
+[node name="ShippingRedHorizontalClosed" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+texture = ExtResource("1_yc37e")
+offset = Vector2(0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_lskki")
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
+collision_mask = 22
+script = ExtResource("2_qqgj0")
+main_sprite = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_mnwqj")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
