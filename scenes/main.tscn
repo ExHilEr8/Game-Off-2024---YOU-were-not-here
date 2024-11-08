@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=18 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
 [ext_resource type="PackedScene" uid="uid://4nppadb6xsm0" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_open.tscn" id="3_ow376"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ccfwks7ufbr22" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_closed.tscn" id="14_6mtiv"]
 [ext_resource type="PackedScene" uid="uid://bq5udoc0j3hjc" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_double_open.tscn" id="15_hspxg"]
 [ext_resource type="PackedScene" uid="uid://dt4gcph8s7cbi" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_open.tscn" id="16_588lt"]
+[ext_resource type="PackedScene" uid="uid://pw4ct1p3n4sx" path="res://assets/objects/barrels/barrelN.tscn" id="17_savni"]
 
 [node name="Node" type="Node2D"]
 y_sort_enabled = true
@@ -66,3 +67,6 @@ position = Vector2(-24, -121)
 
 [node name="ShippingRedVerticalOpen" parent="." instance=ExtResource("16_588lt")]
 position = Vector2(18, -164)
+
+[node name="ShippingBlueHorizontalClosed3" parent="." instance=ExtResource("17_savni")]
+position = Vector2(102, 32)

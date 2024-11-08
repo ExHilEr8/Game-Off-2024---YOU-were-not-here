@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx1s5g8bwplv8"
-path="res://.godot/imported/barrelNE.png-1b90277728d6d220799c92ba40581918.ctex"
+uid="uid://d0juu4ujsj0gt"
+path="res://.godot/imported/barrelopen.png-f6ec9a007f5eb9cfdedcb2cd7dd0c591.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/barrelNE.png"
-dest_files=["res://.godot/imported/barrelNE.png-1b90277728d6d220799c92ba40581918.ctex"]
+source_file="res://assets/objects/barrels/barrelopen.png"
+dest_files=["res://.godot/imported/barrelopen.png-f6ec9a007f5eb9cfdedcb2cd7dd0c591.ctex"]
 
 [params]
 

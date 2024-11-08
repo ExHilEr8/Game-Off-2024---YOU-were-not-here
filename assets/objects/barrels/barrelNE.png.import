@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn6e3h0t6v4ag"
-path="res://.godot/imported/looticon.png-7132427ae8791c621b15c8dbbc1bb960.ctex"
+uid="uid://dx1s5g8bwplv8"
+path="res://.godot/imported/barrelNE.png-ba3bb9e375de831fd16b65f090c5c511.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/loot/looticon.png"
-dest_files=["res://.godot/imported/looticon.png-7132427ae8791c621b15c8dbbc1bb960.ctex"]
+source_file="res://assets/objects/barrels/barrelNE.png"
+dest_files=["res://.godot/imported/barrelNE.png-ba3bb9e375de831fd16b65f090c5c511.ctex"]
 
 [params]
 

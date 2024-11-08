@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnf06r4r7e1g1"]
+
+[ext_resource type="Texture2D" uid="uid://dx1s5g8bwplv8" path="res://assets/objects/barrels/barrelNE.png" id="1_qsxrn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubir0"]
+radius = 4.0
+
+[node name="ShippingBlueHorizontalClosed" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+texture = ExtResource("1_qsxrn")
+offset = Vector2(0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ubir0")
