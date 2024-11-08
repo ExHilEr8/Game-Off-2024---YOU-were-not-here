@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3ssm86e8kup"
-path="res://.godot/imported/shippingblueverticaldoubleopen.png-742f02b0b32c381be80782ca176bfb12.ctex"
+uid="uid://tyqv8wn446ok"
+path="res://.godot/imported/shippingblueverticalclosed.png-bd085aa08bc4fe6732bf7a2d15cf8dcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/shippingcontainers/shippingblueverticaldoubleopen.png"
-dest_files=["res://.godot/imported/shippingblueverticaldoubleopen.png-742f02b0b32c381be80782ca176bfb12.ctex"]
+source_file="res://assets/objects/shippingcontainers/finished/shippingblueverticalclosed.png"
+dest_files=["res://.godot/imported/shippingblueverticalclosed.png-bd085aa08bc4fe6732bf7a2d15cf8dcc.ctex"]
 
 [params]
 

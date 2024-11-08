@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dvng1f5ismuw3"]
 
-[ext_resource type="Texture2D" uid="uid://u0rlviu83r8l" path="res://assets/objects/shippingcontainers/shippingbluehorizontalopen.png" id="1_6gy17"]
+[ext_resource type="Texture2D" uid="uid://u0rlviu83r8l" path="res://assets/objects/shippingcontainers/finished/shippingbluehorizontalopen.png" id="1_6gy17"]
 [ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_bg13n"]
-[ext_resource type="Texture2D" uid="uid://cjvupd02r5wrt" path="res://assets/objects/shippingcontainers/shippingbluehorizontalinside.png" id="2_or6m1"]
+[ext_resource type="Texture2D" uid="uid://cjvupd02r5wrt" path="res://assets/objects/shippingcontainers/finished/shippingbluehorizontalinside.png" id="2_or6m1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(80, 2.125)
@@ -22,9 +22,10 @@ size = Vector2(92, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db1oh"]
 size = Vector2(74, 20)
 
-[node name="Shippingbluehorizontalopen" type="Node2D"]
+[node name="ShippingBlueHorizontalOpen" type="Node2D"]
 
 [node name="Sprite2DInside" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 4.5)
 texture = ExtResource("2_or6m1")
 
@@ -35,6 +36,7 @@ offset = Vector2(0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 4)
+collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(6, 21.0625)
@@ -52,23 +54,26 @@ shape = SubResource("RectangleShape2D_fjobf")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_8n0ui")
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "inside_sprite")]
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "opposite_sprite")]
 position = Vector2(1, 4)
-collision_mask = 3
+scale = Vector2(1, 1.00518)
+collision_mask = 6
 script = ExtResource("2_bg13n")
 main_sprite = NodePath("../Sprite2D")
-inside_sprite = NodePath("../Sprite2DInside")
+opposite_sprite = NodePath("../Sprite2DInside")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_mnwqj")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
-[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
-scale = Vector2(1.00816, 1.01732)
+[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite", "opposite_sprite")]
+scale = Vector2(1.0034, 1.01732)
 collision_mask = 6
 script = ExtResource("2_bg13n")
 main_sprite = NodePath("../Sprite2D")
+opposite_sprite = NodePath("../Sprite2DInside")
+is_inside = true
 entered_opacity = 0.0
 entered_time = 0.05
 exited_time = 0.1
