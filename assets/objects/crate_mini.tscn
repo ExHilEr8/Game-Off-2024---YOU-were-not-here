@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu14kaurj15dn"]
+
+[ext_resource type="Texture2D" uid="uid://cuxcco67c6s8a" path="res://assets/objects/crate_mini.png" id="1_2c2l6"]
+
+[node name="CrateMini" type="Node2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2c2l6")

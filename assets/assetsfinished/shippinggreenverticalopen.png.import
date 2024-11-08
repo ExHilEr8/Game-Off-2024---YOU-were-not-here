@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuxcco67c6s8a"
-path="res://.godot/imported/minicrate.png-9db0fa9310aaca7c26572a95e93f9124.ctex"
+uid="uid://cl7lmtimb1p62"
+path="res://.godot/imported/shippinggreenverticalopen.png-b7e107a7e1ff23eae46d40f8159701cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/minicrate.png"
-dest_files=["res://.godot/imported/minicrate.png-9db0fa9310aaca7c26572a95e93f9124.ctex"]
+source_file="res://assets/assetsfinished/shippinggreenverticalopen.png"
+dest_files=["res://.godot/imported/shippinggreenverticalopen.png-b7e107a7e1ff23eae46d40f8159701cf.ctex"]
 
 [params]
 

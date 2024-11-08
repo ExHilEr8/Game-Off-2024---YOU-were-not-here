@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaamwsujxw0q"
-path="res://.godot/imported/shippingredverticaldoubleopen.png-d4fc825ab9a31dbe8ced07081bb675c0.ctex"
+uid="uid://bipfmw5q17sgf"
+path="res://.godot/imported/crateopen.png-01d51d38f0bad7a53b9aa5352a3e916c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/shippingcontainers/shipping_container_assets/shippingredverticaldoubleopen.png"
-dest_files=["res://.godot/imported/shippingredverticaldoubleopen.png-d4fc825ab9a31dbe8ced07081bb675c0.ctex"]
+source_file="res://assets/objects/crateopen.png"
+dest_files=["res://.godot/imported/crateopen.png-01d51d38f0bad7a53b9aa5352a3e916c.ctex"]
 
 [params]
 

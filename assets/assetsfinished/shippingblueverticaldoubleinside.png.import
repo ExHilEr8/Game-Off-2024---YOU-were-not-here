@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doyamk1kbdyk0"
-path="res://.godot/imported/triplebarrel.png-bf85625cf561a827666387b5ab8050b1.ctex"
+uid="uid://cx3cngm2a3ung"
+path="res://.godot/imported/shippingblueverticaldoubleinside.png-da43aaf7b90e56243845d05953b23614.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/triplebarrel.png"
-dest_files=["res://.godot/imported/triplebarrel.png-bf85625cf561a827666387b5ab8050b1.ctex"]
+source_file="res://assets/assetsfinished/shippingblueverticaldoubleinside.png"
+dest_files=["res://.godot/imported/shippingblueverticaldoubleinside.png-da43aaf7b90e56243845d05953b23614.ctex"]
 
 [params]
 

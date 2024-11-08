@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://n1ahkldwyoaf"]
+
+[ext_resource type="Texture2D" uid="uid://bipfmw5q17sgf" path="res://assets/objects/crateopen.png" id="1_ata4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
+size = Vector2(14.1563, 8)
+
+[node name="CrateOpen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ata4c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_xk0kc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xk0kc")

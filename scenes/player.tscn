@@ -10,6 +10,9 @@ height = 10.6195
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 position = Vector2(148, 36)
 collision_layer = 2
+collision_mask = 25
+floor_stop_on_slope = false
+floor_block_on_wall = false
 script = ExtResource("1_hdxn4")
 sprite = NodePath("Sprite")
 walking_speed = 100.0

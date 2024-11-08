@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bipfmw5q17sgf"
-path="res://.godot/imported/crateopen.png-5e933e480cbd64f7508808839a2aed75.ctex"
+uid="uid://dyjls83gqhfw0"
+path="res://.godot/imported/shippingredhorizontalopen.png-3ebe8da20604101acb39f4709ca0eb3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/loot/crateopen.png"
-dest_files=["res://.godot/imported/crateopen.png-5e933e480cbd64f7508808839a2aed75.ctex"]
+source_file="res://assets/assetsfinished/shippingredhorizontalopen.png"
+dest_files=["res://.godot/imported/shippingredhorizontalopen.png-3ebe8da20604101acb39f4709ca0eb3a.ctex"]
 
 [params]
 
