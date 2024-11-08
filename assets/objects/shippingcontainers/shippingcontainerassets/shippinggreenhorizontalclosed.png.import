@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4ktjjrcymqbp"
-path="res://.godot/imported/fencehorizontalfullopen.png-c07012dbccca9af133156e877a798a44.ctex"
+uid="uid://bynlfdaqn6t6q"
+path="res://.godot/imported/shippinggreenhorizontalclosed.png-3a0b56067e6aa3064fdca1454ff9afd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gatesandfences/fencehorizontalfullopen.png"
-dest_files=["res://.godot/imported/fencehorizontalfullopen.png-c07012dbccca9af133156e877a798a44.ctex"]
+source_file="res://assets/objects/shippingcontainers/shippingcontainerassets/shippinggreenhorizontalclosed.png"
+dest_files=["res://.godot/imported/shippinggreenhorizontalclosed.png-3a0b56067e6aa3064fdca1454ff9afd1.ctex"]
 
 [params]
 

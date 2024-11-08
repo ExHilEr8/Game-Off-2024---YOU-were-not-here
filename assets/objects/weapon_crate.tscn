@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplc3t231ysxk"]
+
+[ext_resource type="Texture2D" uid="uid://b0lm5h72sg21e" path="res://assets/objects/weaponcrate.png" id="1_swi2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
+size = Vector2(20.0781, 4)
+
+[node name="WeaponCrate" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_swi2n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_xk0kc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xk0kc")

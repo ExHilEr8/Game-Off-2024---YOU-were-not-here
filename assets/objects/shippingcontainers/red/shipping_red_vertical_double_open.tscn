@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bq5udoc0j3hjc"]
 
-[ext_resource type="Texture2D" uid="uid://biaamwsujxw0q" path="res://assets/assetsfinished/shippingredverticaldoubleopen.png" id="2_4ya8v"]
-[ext_resource type="Texture2D" uid="uid://rgxl3fkat4in" path="res://assets/assetsfinished/shippingredverticaldoubleopeninside.png" id="2_iymql"]
+[ext_resource type="Texture2D" uid="uid://biaamwsujxw0q" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredverticaldoubleopen.png" id="2_4ya8v"]
+[ext_resource type="Texture2D" uid="uid://rgxl3fkat4in" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredverticaldoubleopeninside.png" id="2_iymql"]
 [ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="3_yahss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuu4g"]

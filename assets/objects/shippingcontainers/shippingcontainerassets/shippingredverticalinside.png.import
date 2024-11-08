@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1mlu75ks75s2"
-path="res://.godot/imported/fencehorizontalhalf.png-9221df6a6f69d4651bdd7c2ade7dffe0.ctex"
+uid="uid://5ckrtkha7fb2"
+path="res://.godot/imported/shippingredverticalinside.png-8e4f955faeb5728f3c0f5b10c5538842.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gatesandfences/fencehorizontalhalf.png"
-dest_files=["res://.godot/imported/fencehorizontalhalf.png-9221df6a6f69d4651bdd7c2ade7dffe0.ctex"]
+source_file="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredverticalinside.png"
+dest_files=["res://.godot/imported/shippingredverticalinside.png-8e4f955faeb5728f3c0f5b10c5538842.ctex"]
 
 [params]
 

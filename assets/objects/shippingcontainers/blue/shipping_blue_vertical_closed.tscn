@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://blmd0ho8cf5gd"]
 
-[ext_resource type="Texture2D" uid="uid://tyqv8wn446ok" path="res://assets/assetsfinished/shippingblueverticalclosed.png" id="1_apamn"]
+[ext_resource type="Texture2D" uid="uid://tyqv8wn446ok" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingblueverticalclosed.png" id="1_apamn"]
 [ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_pnhd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]

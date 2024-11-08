@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=31 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
 [ext_resource type="PackedScene" uid="uid://4nppadb6xsm0" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_open.tscn" id="3_ow376"]
@@ -25,6 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://osqfebjxs57q" path="res://assets/objects/crate.tscn" id="23_85m2v"]
 [ext_resource type="PackedScene" uid="uid://n1ahkldwyoaf" path="res://assets/objects/crate_open.tscn" id="24_obovl"]
 [ext_resource type="PackedScene" uid="uid://bu14kaurj15dn" path="res://assets/objects/crate_mini.tscn" id="25_kwtcq"]
+[ext_resource type="PackedScene" uid="uid://dplc3t231ysxk" path="res://assets/objects/weapon_crate.tscn" id="26_xxiaj"]
+[ext_resource type="PackedScene" uid="uid://dyrqyyilps74l" path="res://assets/objects/weapon_crate_open.tscn" id="27_834vu"]
+[ext_resource type="PackedScene" uid="uid://i3vqtv4um1qn" path="res://assets/objects/forklift.tscn" id="28_5mh87"]
+[ext_resource type="PackedScene" uid="uid://c63g04gqtissw" path="res://assets/objects/table.tscn" id="29_q2q67"]
+[ext_resource type="PackedScene" uid="uid://c425f3kdi1ony" path="res://assets/objects/dumpster.tscn" id="30_y44wc"]
 
 [node name="Node" type="Node2D"]
 y_sort_enabled = true
@@ -102,3 +107,18 @@ position = Vector2(-70, -41)
 
 [node name="CrateMini" parent="." instance=ExtResource("25_kwtcq")]
 position = Vector2(-62, -35)
+
+[node name="WeaponCrate" parent="." instance=ExtResource("26_xxiaj")]
+position = Vector2(-41, -37)
+
+[node name="WeaponCrateOpen" parent="." instance=ExtResource("27_834vu")]
+position = Vector2(-8, -37)
+
+[node name="Forklift" parent="." instance=ExtResource("28_5mh87")]
+position = Vector2(44, -65)
+
+[node name="Table" parent="." instance=ExtResource("29_q2q67")]
+position = Vector2(38, -29)
+
+[node name="Forklift2" parent="." instance=ExtResource("30_y44wc")]
+position = Vector2(-165, -36)

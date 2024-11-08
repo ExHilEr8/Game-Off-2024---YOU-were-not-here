@@ -1,35 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://y6f7abjfcmk4"]
+[gd_scene load_steps=5 format=3 uid="uid://i3vqtv4um1qn"]
 
-[ext_resource type="Texture2D" uid="uid://b2r0ii8mskvgb" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredhorizontalclosed.png" id="1_yc37e"]
-[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_qqgj0"]
+[ext_resource type="Texture2D" uid="uid://dxwx71lvq1krh" path="res://assets/objects/forklift.png" id="1_nid8v"]
+[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_mqrrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
-size = Vector2(80, 24.25)
+size = Vector2(22, 6.0625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
-size = Vector2(80, 17)
+size = Vector2(22, 9.5)
 
-[node name="ShippingRedHorizontalClosed" type="Node2D"]
+[node name="Forklift" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 use_parent_material = true
-texture = ExtResource("1_yc37e")
+texture = ExtResource("1_nid8v")
 offset = Vector2(0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 10)
+position = Vector2(7, 9)
 shape = SubResource("RectangleShape2D_lskki")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
 collision_mask = 22
-script = ExtResource("2_qqgj0")
+script = ExtResource("2_mqrrm")
 main_sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -11)
+position = Vector2(7, 1.75)
 shape = SubResource("RectangleShape2D_mnwqj")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
