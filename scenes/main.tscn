@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=22 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
 [ext_resource type="PackedScene" uid="uid://4nppadb6xsm0" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_open.tscn" id="3_ow376"]
@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://bq5udoc0j3hjc" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_double_open.tscn" id="15_hspxg"]
 [ext_resource type="PackedScene" uid="uid://dt4gcph8s7cbi" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_open.tscn" id="16_588lt"]
 [ext_resource type="PackedScene" uid="uid://pw4ct1p3n4sx" path="res://assets/objects/barrels/barrelN.tscn" id="17_savni"]
+[ext_resource type="PackedScene" uid="uid://cnf06r4r7e1g1" path="res://assets/objects/barrels/barrelNE.tscn" id="18_b2451"]
+[ext_resource type="PackedScene" uid="uid://dfkh2m7mcrea6" path="res://assets/objects/barrels/barrelS.tscn" id="19_8iovy"]
+[ext_resource type="PackedScene" uid="uid://b8j4ocdymoi8a" path="res://assets/objects/barrels/barrelSE.tscn" id="20_rcs7m"]
+[ext_resource type="PackedScene" uid="uid://ciuwht58fg3x4" path="res://assets/objects/barrels/barrel_open.tscn" id="21_njfp3"]
 
 [node name="Node" type="Node2D"]
 y_sort_enabled = true
@@ -68,5 +72,17 @@ position = Vector2(-24, -121)
 [node name="ShippingRedVerticalOpen" parent="." instance=ExtResource("16_588lt")]
 position = Vector2(18, -164)
 
-[node name="ShippingBlueHorizontalClosed3" parent="." instance=ExtResource("17_savni")]
-position = Vector2(102, 32)
+[node name="BarrelN" parent="." instance=ExtResource("17_savni")]
+position = Vector2(-42, -93)
+
+[node name="BarrelNE" parent="." instance=ExtResource("18_b2451")]
+position = Vector2(-54, -93)
+
+[node name="BarrelS" parent="." instance=ExtResource("19_8iovy")]
+position = Vector2(-66, -93)
+
+[node name="BarrelSE" parent="." instance=ExtResource("20_rcs7m")]
+position = Vector2(-78, -93)
+
+[node name="BarrelOpen" parent="." instance=ExtResource("21_njfp3")]
+position = Vector2(-90, -93)
