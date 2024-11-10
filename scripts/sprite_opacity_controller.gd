@@ -19,22 +19,23 @@ var tween : Tween
 
 func _on_body_entered(_body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, entered_opacity)
-	tween_modulate(tween, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
+	tween_modulate(self, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
 
 func _on_body_exited(body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, exited_opacity)
 
-	if inside_controller and not is_inside(body, inside_controller.get_overlapping_bodies()):
-		tween_modulate(tween, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
+	if inside_controller:
+		if not is_inside(body, inside_controller.get_overlapping_bodies()):
+			tween_modulate(self, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
 	else:
-		tween_modulate(tween, main_sprite, color, exited_transition_time_seconds, exited_ease_type)
+		tween_modulate(self, main_sprite, color, exited_transition_time_seconds, exited_ease_type)
 
-func tween_modulate(tweener : Tween, sprite: Sprite2D, color : Color, time : float, ease_type: Tween.EaseType):
-	if tween:
-		tween.kill()
-	
-	tweener = create_tween()
-	tweener.tween_property(sprite, "modulate", color, time).set_ease(ease_type)
+func tween_modulate(opacity_controller : OpacityController, sprite: Sprite2D, color : Color, time : float, ease_type: Tween.EaseType):
+	if opacity_controller.tween:
+		opacity_controller.tween.kill()
+
+	opacity_controller.tween = create_tween()
+	opacity_controller.tween.tween_property(sprite, "modulate", color, time).set_ease(ease_type)
 
 func is_inside(body : Node2D, bodies : Array[Node2D]):
 	for item in bodies:

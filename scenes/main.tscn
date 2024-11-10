@@ -120,5 +120,5 @@ position = Vector2(44, -65)
 [node name="Table" parent="." instance=ExtResource("29_q2q67")]
 position = Vector2(38, -29)
 
-[node name="Forklift2" parent="." instance=ExtResource("30_y44wc")]
+[node name="Dumpster" parent="." instance=ExtResource("30_y44wc")]
 position = Vector2(-165, -36)
