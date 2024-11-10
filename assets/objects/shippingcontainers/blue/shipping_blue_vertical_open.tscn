@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://3k6uo6pregjb" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingblueverticalinside.png" id="1_42gmu"]
 [ext_resource type="Texture2D" uid="uid://duryptumsjo37" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingblueverticalopen.png" id="2_gqybr"]
-[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="3_1r8h2"]
-[ext_resource type="Script" path="res://scripts/inside_sprite_opacity_controller.gd" id="4_lv5jy"]
+[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="3_1r8h2"]
+[ext_resource type="Script" path="res://scripts/inside_opacity_controller.gd" id="4_lv5jy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_555ws"]
 size = Vector2(2, 56)

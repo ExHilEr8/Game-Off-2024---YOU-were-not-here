@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c425f3kdi1ony"]
 
 [ext_resource type="Texture2D" uid="uid://c6f74oyw8r20g" path="res://assets/objects/dumpster.png" id="1_h14rw"]
-[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_67gue"]
+[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_67gue"]
 [ext_resource type="Texture2D" uid="uid://cxh1csnffhncs" path="res://assets/objects/dumpsterfull.png" id="3_u80w3"]
 [ext_resource type="Texture2D" uid="uid://cth6s402mghe7" path="res://assets/objects/dumpsteropen.png" id="4_o00n6"]
 

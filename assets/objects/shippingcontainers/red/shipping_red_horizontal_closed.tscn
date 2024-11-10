@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://y6f7abjfcmk4"]
 
 [ext_resource type="Texture2D" uid="uid://b2r0ii8mskvgb" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredhorizontalclosed.png" id="1_yc37e"]
-[ext_resource type="Script" path="res://scripts/sprite_opacity_controller.gd" id="2_qqgj0"]
+[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_qqgj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(80, 24.25)
