@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vijo4nq41ltq"]
+
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_27eer"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7egac"]
+radius = 2.0
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_27eer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7egac")
+debug_color = Color(0.695733, 0.281347, 1, 0.42)

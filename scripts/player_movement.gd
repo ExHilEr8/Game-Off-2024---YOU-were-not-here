@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var sprite = Sprite2D
 @export var walking_speed : float = 400
 @export var sprinting_speed : float = 500
+@export var player_interacting_speed : float = 100
 
 var character_direction : Vector2
 

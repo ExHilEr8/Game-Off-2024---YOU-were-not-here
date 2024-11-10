@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckfr4aq7owr60"]
+[gd_scene load_steps=6 format=3 uid="uid://ckfr4aq7owr60"]
 
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_hdxn4"]
 [ext_resource type="Texture2D" uid="uid://co1hsldqffgio" path="res://assets/sprites/robber.png" id="2_mhhs4"]
+[ext_resource type="Script" path="res://scripts/player_interaction.gd" id="3_xupgk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu6xg"]
 radius = 5.30974
 height = 10.6195
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajoap"]
+radius = 20.025
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 position = Vector2(148, 36)
@@ -28,3 +32,14 @@ scale = Vector2(0.565, 0.565)
 shape = SubResource("CapsuleShape2D_fu6xg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InteractableDetector" type="Area2D" parent="."]
+collision_mask = 4
+script = ExtResource("3_xupgk")
+
+[node name="InteractZone" type="CollisionShape2D" parent="InteractableDetector"]
+shape = SubResource("CircleShape2D_ajoap")
+debug_color = Color(0.597953, 0.535249, 0.284913, 0.42)
+
+[connection signal="area_entered" from="InteractableDetector" to="InteractableDetector" method="_on_area_entered"]
+[connection signal="area_exited" from="InteractableDetector" to="InteractableDetector" method="_on_area_exited"]
