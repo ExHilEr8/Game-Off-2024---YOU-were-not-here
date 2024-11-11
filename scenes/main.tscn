@@ -125,4 +125,4 @@ position = Vector2(38, -29)
 position = Vector2(-165, -36)
 
 [node name="Lootable" parent="." instance=ExtResource("31_pvdon")]
-position = Vector2(-126, 12)
+position = Vector2(108, 40)

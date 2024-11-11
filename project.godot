@@ -83,6 +83,7 @@ throw_bag={
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="Bullets"
 2d_physics/layer_5="Guards"
+2d_physics/layer_6="Lootbags"
 
 [rendering]
 
