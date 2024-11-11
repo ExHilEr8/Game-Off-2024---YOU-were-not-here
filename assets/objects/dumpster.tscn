@@ -15,7 +15,7 @@ size = Vector2(12.375, 7.34375)
 
 [node name="Dumpster" type="Node2D" node_paths=PackedStringArray("interactable", "dumpster_open_sprite", "dumpster_closed_sprite", "dumpster_full_sprite")]
 script = ExtResource("1_7o46v")
-interactable = NodePath("Interactable")
+interactable = NodePath("InteractableComponent")
 dumpster_open_sprite = NodePath("DumpsterOpen")
 dumpster_closed_sprite = NodePath("DumpsterClosed")
 dumpster_full_sprite = NodePath("DumpsterFull")
@@ -61,7 +61,7 @@ position = Vector2(5, -5)
 shape = SubResource("RectangleShape2D_mnwqj")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
-[node name="Interactable" parent="." instance=ExtResource("5_4p81r")]
+[node name="InteractableComponent" parent="." instance=ExtResource("5_4p81r")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

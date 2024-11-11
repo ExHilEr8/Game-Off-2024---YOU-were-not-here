@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vijo4nq41ltq"]
 
-[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_7cuyh"]
+[ext_resource type="Script" path="res://scripts/interactable_component.gd" id="1_7cuyh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egac"]
 radius = 2.0

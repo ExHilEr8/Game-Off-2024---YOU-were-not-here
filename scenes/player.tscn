@@ -44,8 +44,9 @@ player_loot_manager = NodePath("../LootManager")
 shape = SubResource("CircleShape2D_ajoap")
 debug_color = Color(0.597953, 0.535249, 0.284913, 0.42)
 
-[node name="LootManager" type="Node2D" parent="."]
+[node name="LootManager" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_xu1p2")
+player = NodePath("..")
 
 [connection signal="area_entered" from="InteractableDetector" to="InteractableDetector" method="_on_area_entered"]
 [connection signal="area_exited" from="InteractableDetector" to="InteractableDetector" method="_on_area_exited"]

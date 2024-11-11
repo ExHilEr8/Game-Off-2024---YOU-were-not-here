@@ -1,5 +1,5 @@
 extends Node
-class_name Lootable
+class_name LootableComponent
 
 @export_category("General")
 @export var interactable : Interactable
@@ -11,9 +11,11 @@ static var lootbag_scene := preload("res://assets/loot/lootbag.tscn")
 func _ready():
 	interactable.interacted.connect(interacted)
 
-func interacted(interactor : Node) -> Lootbag:
+func interacted(interactor : Node):
 	var lootbag = lootbag_scene.instantiate().instantiate_with_component(loot_component)
 	var loot_manager = interactor.get_node("LootManager")
 
-	self.queue_free()
-	return lootbag
+	var operation_success = loot_manager.attempt_receive_loot_bag(lootbag)
+
+	if operation_success == true:
+		self.queue_free()

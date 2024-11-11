@@ -11,9 +11,8 @@ func _physics_process(_delta):
 
 		if interactable:
 			interactable.interact(player)
-			if interactable is Lootable:
-				player_loot_manager.lootieee()
-
+			if interactable is LootableComponent:
+				pass
 
 func _on_area_entered(area:Area2D):
 	interactables.append(area)
