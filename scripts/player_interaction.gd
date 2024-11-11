@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var player : Node
 @export var player_loot_manager : Node
 
 var interactables : Array[Interactable]
@@ -9,7 +10,7 @@ func _physics_process(_delta):
 		var interactable = determine_interactable()
 
 		if interactable:
-			interactable.interact()
+			interactable.interact(player)
 			if interactable is Lootable:
 				player_loot_manager.lootieee()
 

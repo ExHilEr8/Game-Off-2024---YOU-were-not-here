@@ -34,16 +34,17 @@ shape = SubResource("CapsuleShape2D_fu6xg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="InteractableDetector" type="Area2D" parent="." node_paths=PackedStringArray("player_loot_manager")]
+[node name="InteractableDetector" type="Area2D" parent="." node_paths=PackedStringArray("player", "player_loot_manager")]
 collision_mask = 4
 script = ExtResource("3_xupgk")
-player_loot_manager = NodePath("../PlayerLootManager")
+player = NodePath("..")
+player_loot_manager = NodePath("../LootManager")
 
 [node name="InteractZone" type="CollisionShape2D" parent="InteractableDetector"]
 shape = SubResource("CircleShape2D_ajoap")
 debug_color = Color(0.597953, 0.535249, 0.284913, 0.42)
 
-[node name="PlayerLootManager" type="Node2D" parent="."]
+[node name="LootManager" type="Node2D" parent="."]
 script = ExtResource("4_xu1p2")
 
 [connection signal="area_entered" from="InteractableDetector" to="InteractableDetector" method="_on_area_entered"]

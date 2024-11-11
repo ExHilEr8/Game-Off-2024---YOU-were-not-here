@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clnwp7so4xqkh"]
 
 [ext_resource type="Script" path="res://scripts/lootbag.gd" id="1_64578"]
-[ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable.tscn" id="1_u8r7x"]
+[ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="1_u8r7x"]
 [ext_resource type="Texture2D" uid="uid://omdjpqvidba4" path="res://assets/misc/lootbag.png" id="2_s7l0v"]
 
 [node name="Lootbag" type="Node2D"]
