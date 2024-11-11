@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c425f3kdi1ony"]
+[gd_scene load_steps=9 format=3 uid="uid://c425f3kdi1ony"]
 
+[ext_resource type="Script" path="res://scripts/dumpster_controller.gd" id="1_7o46v"]
 [ext_resource type="Texture2D" uid="uid://c6f74oyw8r20g" path="res://assets/objects/dumpster.png" id="1_h14rw"]
 [ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_67gue"]
 [ext_resource type="Texture2D" uid="uid://cxh1csnffhncs" path="res://assets/objects/dumpsterfull.png" id="3_u80w3"]
@@ -12,7 +13,12 @@ size = Vector2(12.2031, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
 size = Vector2(12.375, 7.34375)
 
-[node name="Dumpster" type="Node2D"]
+[node name="Dumpster" type="Node2D" node_paths=PackedStringArray("interactable", "dumpster_open_sprite", "dumpster_closed_sprite", "dumpster_full_sprite")]
+script = ExtResource("1_7o46v")
+interactable = NodePath("Interactable")
+dumpster_open_sprite = NodePath("DumpsterOpen")
+dumpster_closed_sprite = NodePath("DumpsterClosed")
+dumpster_full_sprite = NodePath("DumpsterFull")
 
 [node name="DumpsterOpen" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

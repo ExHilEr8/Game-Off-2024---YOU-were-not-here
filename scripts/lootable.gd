@@ -1,7 +1,17 @@
-extends Interactable
+extends Node
 class_name Lootable
 
-var loot
+@export_category("General")
+@export var interactable : Interactable
+@export var loot_component : LootComponent
 
-func on_interact():
-	return loot
+static var lootbag_scene := preload("res://assets/loot/lootbag.tscn")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	interactable.interacted.connect(interacted)
+
+func interacted() -> Lootbag:
+	var lootbag = lootbag_scene.instantiate().instantiate_with_component(loot_component)
+	self.queue_free()
+	return lootbag

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=32 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
 [ext_resource type="PackedScene" uid="uid://4nppadb6xsm0" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_open.tscn" id="3_ow376"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://i3vqtv4um1qn" path="res://assets/objects/forklift.tscn" id="28_5mh87"]
 [ext_resource type="PackedScene" uid="uid://c63g04gqtissw" path="res://assets/objects/table.tscn" id="29_q2q67"]
 [ext_resource type="PackedScene" uid="uid://c425f3kdi1ony" path="res://assets/objects/dumpster.tscn" id="30_y44wc"]
+[ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable.tscn" id="31_pvdon"]
 
 [node name="Node" type="Node2D"]
 y_sort_enabled = true
@@ -122,3 +123,6 @@ position = Vector2(38, -29)
 
 [node name="Dumpster" parent="." instance=ExtResource("30_y44wc")]
 position = Vector2(-165, -36)
+
+[node name="Lootable" parent="." instance=ExtResource("31_pvdon")]
+position = Vector2(-126, 12)
