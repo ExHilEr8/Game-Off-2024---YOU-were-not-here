@@ -30,7 +30,7 @@ func determine_interactable() -> Interactable:
 	return interactables[0]
 
 func is_interacting() -> bool:
-	if Input.is_action_pressed("interact") == true:
+	if Input.is_action_just_pressed("interact") == true:
 		return true
 
 	return false

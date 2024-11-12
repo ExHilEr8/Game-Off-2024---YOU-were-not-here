@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ks20yib1bk4e"]
+[gd_scene load_steps=6 format=3 uid="uid://ks20yib1bk4e"]
 
+[ext_resource type="Script" path="res://scripts/shipping_container.gd" id="1_lf2ud"]
 [ext_resource type="Texture2D" uid="uid://ikvh6sbqb0ww" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingbluehorizontalclosed.png" id="1_pb2hm"]
 [ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_mtagi"]
 
@@ -9,7 +10,9 @@ size = Vector2(80, 24.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnwqj"]
 size = Vector2(80, 17)
 
-[node name="ShippingBlueHorizontalClosed" type="Node2D"]
+[node name="ShippingBlueHorizontalClosed" type="Node2D" node_paths=PackedStringArray("main_controller")]
+script = ExtResource("1_lf2ud")
+main_controller = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 use_parent_material = true

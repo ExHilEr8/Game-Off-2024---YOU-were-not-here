@@ -8,13 +8,12 @@ var current_rotation
 
 func _ready():
 	current_rotation = rotation
-
 	speed = speed - loot_component.loot_weight
-	pass
+	add_to_group("Lootbags")
 
 func instantiate_with_component(component : LootComponent) -> Lootbag:
 	var new_component = LootComponent.new()
-	
+
 	new_component.loot_name = component.loot_name 
 	new_component.loot_weight = component.loot_weight 
 	new_component.loot_allows_sprinting = component.loot_allows_sprinting 

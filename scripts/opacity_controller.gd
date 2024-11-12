@@ -24,11 +24,13 @@ func _on_body_entered(_body:Node2D):
 func _on_body_exited(body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, exited_opacity)
 
-	if inside_controller:
-		if not is_inside(body, inside_controller.get_overlapping_bodies()):
-			tween_modulate(self, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
-	else:
-		tween_modulate(self, main_sprite, color, exited_transition_time_seconds, exited_ease_type)
+	if contains_other_bodies() == false:
+		## Required to ensure that exiting the inside area into the "behind" area doesnt overwrite itself
+		if inside_controller:
+			if not is_inside(body, inside_controller.get_overlapping_bodies()):
+				tween_modulate(self, main_sprite, color, entered_transition_time_seconds, entered_ease_type)
+		else:
+			tween_modulate(self, main_sprite, color, exited_transition_time_seconds, exited_ease_type)
 
 func tween_modulate(opacity_controller : OpacityController, sprite: Sprite2D, color : Color, time : float, ease_type: Tween.EaseType):
 	if opacity_controller.tween:
@@ -42,4 +44,11 @@ func is_inside(body : Node2D, bodies : Array[Node2D]):
 		if item == body:
 			return true
 	
+	return false
+
+func contains_other_bodies() -> bool:
+	for body in get_overlapping_bodies():
+		if body.is_in_group("Lootbags"):
+			return true
+
 	return false

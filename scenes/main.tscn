@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=22 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
 [ext_resource type="PackedScene" uid="uid://4nppadb6xsm0" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_open.tscn" id="3_ow376"]
@@ -6,16 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dfxqmpby2dp08" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_double_open.tscn" id="4_vdoe3"]
 [ext_resource type="PackedScene" uid="uid://dvng1f5ismuw3" path="res://assets/objects/shippingcontainers/blue/shipping_blue_horizontal_open.tscn" id="5_4mgkl"]
 [ext_resource type="PackedScene" uid="uid://ks20yib1bk4e" path="res://assets/objects/shippingcontainers/blue/shipping_blue_horizontal_closed.tscn" id="6_27w8g"]
-[ext_resource type="PackedScene" uid="uid://83f8wphp2d6b" path="res://assets/objects/shippingcontainers/green/shipping_green_horizontal_closed.tscn" id="7_wo0q8"]
-[ext_resource type="PackedScene" uid="uid://dk11kua23tjoo" path="res://assets/objects/shippingcontainers/green/shipping_green_horizontal_open.tscn" id="8_8qoq2"]
-[ext_resource type="PackedScene" uid="uid://iwavmweahqet" path="res://assets/objects/shippingcontainers/green/shipping_green_vertical_closed.tscn" id="9_djwbm"]
-[ext_resource type="PackedScene" uid="uid://crskqedrsrksr" path="res://assets/objects/shippingcontainers/green/shipping_green_vertical_double_open.tscn" id="10_p3fus"]
-[ext_resource type="PackedScene" uid="uid://3w37ed3a0jmm" path="res://assets/objects/shippingcontainers/green/shipping_green_vertical_open.tscn" id="11_w2kd3"]
-[ext_resource type="PackedScene" uid="uid://y6f7abjfcmk4" path="res://assets/objects/shippingcontainers/red/shipping_red_horizontal_closed.tscn" id="12_66qws"]
-[ext_resource type="PackedScene" uid="uid://cbl02n02d5ly0" path="res://assets/objects/shippingcontainers/red/shipping_red_horizontal_open.tscn" id="13_165cl"]
-[ext_resource type="PackedScene" uid="uid://ccfwks7ufbr22" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_closed.tscn" id="14_6mtiv"]
-[ext_resource type="PackedScene" uid="uid://bq5udoc0j3hjc" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_double_open.tscn" id="15_hspxg"]
-[ext_resource type="PackedScene" uid="uid://dt4gcph8s7cbi" path="res://assets/objects/shippingcontainers/red/shipping_red_vertical_open.tscn" id="16_588lt"]
 [ext_resource type="PackedScene" uid="uid://pw4ct1p3n4sx" path="res://assets/objects/barrels/barrelN.tscn" id="17_savni"]
 [ext_resource type="PackedScene" uid="uid://cnf06r4r7e1g1" path="res://assets/objects/barrels/barrelNE.tscn" id="18_b2451"]
 [ext_resource type="PackedScene" uid="uid://dfkh2m7mcrea6" path="res://assets/objects/barrels/barrelS.tscn" id="19_8iovy"]
@@ -36,51 +26,6 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ldneh")]
-
-[node name="ShippingBlueHorizontalClosed" parent="." instance=ExtResource("6_27w8g")]
-position = Vector2(-281, -247)
-
-[node name="ShippingBlueHorizontalOpen" parent="." instance=ExtResource("5_4mgkl")]
-position = Vector2(-287, -295)
-
-[node name="ShippingBlueVerticalClosed" parent="." instance=ExtResource("4_rb83g")]
-position = Vector2(-212, -262)
-
-[node name="ShippingBlueVerticalDoubleOpen" parent="." instance=ExtResource("4_vdoe3")]
-position = Vector2(-175, -224)
-
-[node name="ShippingBlueVerticalOpen" parent="." instance=ExtResource("3_ow376")]
-position = Vector2(-134, -266)
-
-[node name="ShippingBlueHorizontalClosed2" parent="." instance=ExtResource("7_wo0q8")]
-position = Vector2(-279, -169)
-
-[node name="ShippingGreenHorizontalOpen" parent="." instance=ExtResource("8_8qoq2")]
-position = Vector2(-284, -115)
-
-[node name="ShippingGreenVerticalClosed" parent="." instance=ExtResource("9_djwbm")]
-position = Vector2(-215, -128)
-
-[node name="ShippingGreenVerticalDoubleOpen" parent="." instance=ExtResource("10_p3fus")]
-position = Vector2(-178, -90)
-
-[node name="ShippingGreenVerticalOpen" parent="." instance=ExtResource("11_w2kd3")]
-position = Vector2(-138, -131)
-
-[node name="ShippingRedHorizontalClosed" parent="." instance=ExtResource("12_66qws")]
-position = Vector2(-34, -280)
-
-[node name="ShippingRedHorizontalOpen" parent="." instance=ExtResource("13_165cl")]
-position = Vector2(-41, -234)
-
-[node name="ShippingRedVerticalClosed" parent="." instance=ExtResource("14_6mtiv")]
-position = Vector2(-63, -161)
-
-[node name="ShippingRedVerticalDoubleOpen" parent="." instance=ExtResource("15_hspxg")]
-position = Vector2(-24, -121)
-
-[node name="ShippingRedVerticalOpen" parent="." instance=ExtResource("16_588lt")]
-position = Vector2(18, -164)
 
 [node name="BarrelN" parent="." instance=ExtResource("17_savni")]
 position = Vector2(-42, -93)
@@ -127,3 +72,18 @@ position = Vector2(-165, -36)
 [node name="CrateCocaine" parent="." instance=ExtResource("31_qlj8k")]
 position = Vector2(68, 54)
 scale = Vector2(1.02632, 0.994624)
+
+[node name="ShippingBlueHorizontalClosed" parent="." instance=ExtResource("6_27w8g")]
+position = Vector2(170, -194)
+
+[node name="ShippingBlueHorizontalOpen" parent="." instance=ExtResource("5_4mgkl")]
+position = Vector2(165, -135)
+
+[node name="ShippingBlueVerticalClosed" parent="." instance=ExtResource("4_rb83g")]
+position = Vector2(299, -106)
+
+[node name="ShippingBlueVerticalDoubleOpen" parent="." instance=ExtResource("4_vdoe3")]
+position = Vector2(344, -68)
+
+[node name="ShippingBlueVerticalOpen" parent="." instance=ExtResource("3_ow376")]
+position = Vector2(391, -110)

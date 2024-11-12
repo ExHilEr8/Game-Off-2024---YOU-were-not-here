@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt4gcph8s7cbi"]
+[gd_scene load_steps=13 format=3 uid="uid://dt4gcph8s7cbi"]
 
+[ext_resource type="Script" path="res://scripts/shipping_container.gd" id="1_cgdqy"]
 [ext_resource type="Texture2D" uid="uid://5ckrtkha7fb2" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredverticalinside.png" id="1_nxsfl"]
 [ext_resource type="Texture2D" uid="uid://dag40iu6fc5yk" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredverticalopen.png" id="2_o78t5"]
 [ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="3_dfoj7"]
@@ -26,8 +27,11 @@ size = Vector2(13.8867, 53.1658)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8grq"]
 size = Vector2(13.4312, 53.1658)
 
-[node name="ShippingRedVerticalOpen" type="Node2D"]
+[node name="ShippingRedVerticalOpen" type="Node2D" node_paths=PackedStringArray("main_controller", "inside_controller")]
 position = Vector2(0, 33)
+script = ExtResource("1_cgdqy")
+main_controller = NodePath("Area2D")
+inside_controller = NodePath("Area2D2")
 
 [node name="Sprite2DInside" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

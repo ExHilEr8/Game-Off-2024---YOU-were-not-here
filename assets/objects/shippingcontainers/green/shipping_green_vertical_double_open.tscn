@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://crskqedrsrksr"]
+[gd_scene load_steps=8 format=3 uid="uid://crskqedrsrksr"]
 
 [ext_resource type="Texture2D" uid="uid://cftg5d41ui8pk" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippinggreenverticaldoubleinside.png" id="1_q1roa"]
+[ext_resource type="Script" path="res://scripts/shipping_container.gd" id="1_tbtfn"]
 [ext_resource type="Texture2D" uid="uid://bij58h8hjixte" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippinggreenverticaldoubleopen.png" id="2_8uf1h"]
 [ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="3_krhjl"]
 
@@ -13,9 +14,11 @@ size = Vector2(16, 74)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nv8ve"]
 size = Vector2(16, 74)
 
-[node name="ShippingGreenVerticalDoubleOpen" type="Node2D"]
+[node name="ShippingGreenVerticalDoubleOpen" type="Node2D" node_paths=PackedStringArray("main_controller")]
 z_index = -1
 position = Vector2(0, 74)
+script = ExtResource("1_tbtfn")
+main_controller = NodePath("Area2D")
 
 [node name="Sprite2DInside" type="Sprite2D" parent="."]
 position = Vector2(1, -37)
@@ -40,7 +43,7 @@ shape = SubResource("RectangleShape2D_cuu4g")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
 position = Vector2(1, -96)
-collision_mask = 22
+collision_mask = 18
 script = ExtResource("3_krhjl")
 main_sprite = NodePath("../Sprite2D")
 entered_opacity = 0.0
