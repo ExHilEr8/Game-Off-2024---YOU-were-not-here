@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://mw25nnuk7bo0" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippinggreenverticalinside.png" id="1_wfvpp"]
 [ext_resource type="Texture2D" uid="uid://cl7lmtimb1p62" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippinggreenverticalopen.png" id="2_cn68r"]
 [ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="3_p7eci"]
-[ext_resource type="Script" path="res://scripts/inside_opacity_controller.gd" id="4_smycr"]
+[ext_resource type="Script" path="res://scripts/opacity_inside_controller.gd" id="4_smycr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_555ws"]
 size = Vector2(2, 56)
