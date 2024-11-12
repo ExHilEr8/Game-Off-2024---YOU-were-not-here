@@ -1,21 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b348l68jgjjxf"]
+[gd_scene load_steps=3 format=3 uid="uid://b348l68jgjjxf"]
 
 [ext_resource type="Script" path="res://scripts/lootable_component.gd" id="1_xdyla"]
-[ext_resource type="Texture2D" uid="uid://bwcsbyvu8u1q4" path="res://assets/loot/cratecocaine.png" id="1_xoh8s"]
 [ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="2_1itlt"]
-[ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="4_bsv25"]
 
-[node name="LootableComponent" type="Node2D" node_paths=PackedStringArray("interactable", "loot_component")]
+[node name="LootableComponent" type="Node2D" node_paths=PackedStringArray("interactable")]
 script = ExtResource("1_xdyla")
 interactable = NodePath("InteractableComponent")
-loot_component = NodePath("LootComponent")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xoh8s")
 
 [node name="InteractableComponent" parent="." instance=ExtResource("2_1itlt")]
-
-[node name="LootComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("4_bsv25")]
-sprite = NodePath("../Sprite2D")
-loot_name = "Cocaine"
-loot_value = 400000.0

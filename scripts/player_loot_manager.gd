@@ -32,4 +32,4 @@ func throw_bag():
 	get_tree().root.get_child(0).add_child(current_bag)
 	current_bag.position = player.position
 	current_bag.throw()
-	## remove_loot_bag()
+	remove_loot_bag()

@@ -14,8 +14,7 @@ func _ready():
 
 func instantiate_with_component(component : LootComponent) -> Lootbag:
 	var new_component = LootComponent.new()
-
-	new_component.sprite = 	component.sprite 
+	
 	new_component.loot_name = component.loot_name 
 	new_component.loot_weight = component.loot_weight 
 	new_component.loot_allows_sprinting = component.loot_allows_sprinting 

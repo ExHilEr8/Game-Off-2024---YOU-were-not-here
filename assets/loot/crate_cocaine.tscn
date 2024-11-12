@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw4mbkw822weo"]
+
+[ext_resource type="Texture2D" uid="uid://bwcsbyvu8u1q4" path="res://assets/loot/cratecocaine.png" id="1_xj8ey"]
+[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_snpug"]
+[ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable_component.tscn" id="3_27yhs"]
+[ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="4_qnlsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
+size = Vector2(14.1563, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li6gt"]
+size = Vector2(16, 10)
+
+[node name="CrateCocaine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xj8ey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_xk0kc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xk0kc")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -96)
+collision_mask = 4
+script = ExtResource("2_snpug")
+entered_opacity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 91)
+shape = SubResource("RectangleShape2D_li6gt")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="LootableComponent" parent="." node_paths=PackedStringArray("loot_component") instance=ExtResource("3_27yhs")]
+loot_component = NodePath("LootComponent")
+is_bag = false
+
+[node name="LootComponent" parent="LootableComponent" instance=ExtResource("4_qnlsi")]
+loot_name = "Cocaine"
+loot_value = 400000.0
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -12,7 +12,8 @@ func _ready():
 
 func interacted(interactor : Node):
 	var loot_manager = interactor.get_node("LootManager")
-	var operation_success = loot_manager.attempt_receive_loot(loot_component)
+	var operation_success : bool = loot_manager.attempt_receive_loot(loot_component)
 
 	if operation_success == true:
-		self.queue_free()
+		print("dawg")
+		get_parent().queue_free()

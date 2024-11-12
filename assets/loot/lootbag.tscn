@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://clnwp7so4xqkh"]
+[gd_scene load_steps=6 format=3 uid="uid://clnwp7so4xqkh"]
 
 [ext_resource type="Script" path="res://scripts/lootbag.gd" id="1_64578"]
-[ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="1_u8r7x"]
 [ext_resource type="Texture2D" uid="uid://omdjpqvidba4" path="res://assets/misc/lootbag.png" id="2_s7l0v"]
+[ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable_component.tscn" id="3_b1lfv"]
+[ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="4_lllaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu4mb"]
-radius = 4.0
-height = 18.0
+radius = 3.0
+height = 14.0
 
 [node name="Lootbag" type="RigidBody2D"]
 position = Vector2(1, 0)
@@ -20,10 +21,14 @@ script = ExtResource("1_64578")
 position = Vector2(0, 7)
 texture = ExtResource("2_s7l0v")
 
-[node name="Interactable" parent="." instance=ExtResource("1_u8r7x")]
-position = Vector2(0, 7)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qu4mb")
+
+[node name="LootableComponent" parent="." node_paths=PackedStringArray("loot_component") instance=ExtResource("3_b1lfv")]
+position = Vector2(0, 8)
+loot_component = NodePath("../LootComponent")
+
+[node name="LootComponent" parent="." instance=ExtResource("4_lllaf")]
+position = Vector2(0, 8)

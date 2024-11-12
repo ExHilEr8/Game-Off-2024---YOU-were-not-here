@@ -1,9 +1,6 @@
 extends Node
 class_name LootComponent
 
-@export_category("General")
-@export var sprite : Sprite2D 
-
 @export_category("Loot Properties")
 @export var loot_name : String = "Unnamed"
 @export var loot_weight : float = 50
