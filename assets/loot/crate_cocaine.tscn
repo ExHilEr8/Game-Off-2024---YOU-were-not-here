@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bipfmw5q17sgf" path="res://assets/objects/crateopen.png" id="1_1n5re"]
 [ext_resource type="Texture2D" uid="uid://tsxufbg0d3r3" path="res://assets/objects/crate.png" id="1_moi7s"]
-[ext_resource type="Texture2D" uid="uid://bwcsbyvu8u1q4" path="res://assets/loot/cratecocaine.png" id="1_xj8ey"]
+[ext_resource type="Texture2D" uid="uid://dw582nmo51y6c" path="res://assets/loot/cratecocaine.png" id="1_xj8ey"]
 [ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="2_71art"]
 [ext_resource type="Script" path="res://scripts/crate.gd" id="2_c5k5p"]
 [ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_snpug"]
@@ -34,6 +34,7 @@ texture = ExtResource("1_1n5re")
 
 [node name="CrateCocaine" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, -3)
 texture = ExtResource("1_xj8ey")
 
 [node name="LootableComponent" parent="CrateCocaine" node_paths=PackedStringArray("loot_component") instance=ExtResource("3_27yhs")]
@@ -56,11 +57,11 @@ shape = SubResource("RectangleShape2D_xk0kc")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_xk0kc")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("multi_sprite")]
 position = Vector2(1, -96)
-collision_mask = 4
+collision_mask = 34
 script = ExtResource("2_snpug")
-entered_opacity = 0.0
+multi_sprite = [NodePath("../Crate"), NodePath("../CrateOpen"), NodePath("../CrateCocaine")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 91)
@@ -68,5 +69,6 @@ shape = SubResource("RectangleShape2D_li6gt")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
 [connection signal="interacted" from="Crate/InteractableComponent" to="." method="_on_interactable_component_interacted"]
+[connection signal="looted" from="CrateCocaine/LootableComponent" to="." method="_on_lootable_component_looted"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
