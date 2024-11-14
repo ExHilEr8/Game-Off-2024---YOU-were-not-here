@@ -14,12 +14,12 @@ class_name OpacityController
 
 @export_group("Tween Values When Exiting Behind Object")
 @export var exited_opacity : float = 1
-@export var exited_transition_time_seconds : float = 0.2
+@export var exited_transition_time_seconds : float = 0.1
 @export var exited_ease_type : Tween.EaseType = Tween.EASE_IN
 
 @export_group("Tween Values for Outer Sprites When Inside Object")
 @export var outer_opacity_when_inside : float = 0.0
-@export var outer_opacity_when_inside_transition_time_seconds : float = 0.2
+@export var outer_opacity_when_inside_transition_time_seconds : float = 0.1
 @export var outer_opacity_when_inside_ease_type : Tween.EaseType = Tween.EASE_OUT
 
 @export_group("Tween Values for Inside Sprites When Inside Object")
