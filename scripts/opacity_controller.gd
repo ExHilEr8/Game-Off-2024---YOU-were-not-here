@@ -35,6 +35,14 @@ func _ready():
 	inside_exited_buffer_timer.wait_time = exited_transition_time_seconds
 	add_child(inside_exited_buffer_timer)
 
+	if behind_area:
+		behind_area.body_entered.connect(_behind_area_on_body_entered)
+		behind_area.body_exited.connect(_behind_area_on_body_exited)
+	
+	if inside_area:
+		inside_area.body_entered.connect(_inside_area_on_body_entered)
+		inside_area.body_exited.connect(_inside_area_on_body_exited)
+
 func _behind_area_on_body_entered(_body:Node2D):
 	var color = Color(1.0, 1.0, 1.0, entered_opacity)
 
