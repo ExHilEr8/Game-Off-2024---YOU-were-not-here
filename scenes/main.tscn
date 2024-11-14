@@ -66,7 +66,7 @@ position = Vector2(38, -29)
 position = Vector2(-165, -36)
 
 [node name="CrateCocaine" parent="." instance=ExtResource("31_qlj8k")]
-position = Vector2(116, 39)
+position = Vector2(76, 42)
 
 [node name="ShippingBlueVerticalOpen" parent="." instance=ExtResource("17_lcgek")]
 position = Vector2(137, -29)

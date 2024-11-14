@@ -45,6 +45,7 @@ texture = ExtResource("1_1n5re")
 visible = false
 
 [node name="CrateCocaine" type="Sprite2D" parent="."]
+process_mode = 4
 visible = false
 position = Vector2(0, -3)
 texture = ExtResource("1_xj8ey")

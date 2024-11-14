@@ -17,6 +17,7 @@ func _on_interactable_component_interacted(_interactor:Node):
 	crate.queue_free()
 	remove_tween_component_from_opacity_controller(crate)
 
+	crate_loot.process_mode = Node.PROCESS_MODE_INHERIT
 	crate_loot.show()
 	for node in crate.get_children():
 		node.show()

@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 class_name Interactable
 
 @export var interact_time: float = 1.0
