@@ -6,6 +6,8 @@ class_name LootableComponent
 @export var loot_component : LootComponent
 @export var is_bag : bool = true
 
+signal looted
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interactable.interacted.connect(interacted)
@@ -16,4 +18,5 @@ func interacted(interactor : Node):
 
 	if operation_success == true:
 		var parent = get_parent()
+		looted.emit()
 		parent.queue_free()

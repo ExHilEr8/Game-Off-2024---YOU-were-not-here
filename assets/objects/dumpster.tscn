@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/dumpster_controller.gd" id="1_7o46v"]
 [ext_resource type="Texture2D" uid="uid://c6f74oyw8r20g" path="res://assets/objects/dumpster.png" id="1_h14rw"]
-[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_67gue"]
+[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_67gue"]
 [ext_resource type="Texture2D" uid="uid://cxh1csnffhncs" path="res://assets/objects/dumpsterfull.png" id="3_u80w3"]
 [ext_resource type="Texture2D" uid="uid://cth6s402mghe7" path="res://assets/objects/dumpsteropen.png" id="4_o00n6"]
 [ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="5_4p81r"]

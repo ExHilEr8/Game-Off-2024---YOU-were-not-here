@@ -1,22 +1,22 @@
 extends Node
 
-@export var main_controller : Area2D
-@export var inside_controller : Area2D
+@export var behind_area : Area2D
+@export var inside_area : Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if main_controller:
-		main_controller.set_collision_mask_value(1, false)
-		main_controller.set_collision_mask_value(2, true)
-		main_controller.set_collision_mask_value(3, false)
-		main_controller.set_collision_mask_value(4, false)
-		main_controller.set_collision_mask_value(5, true)
-		main_controller.set_collision_mask_value(6, true)
+	if behind_area:
+		behind_area.set_collision_mask_value(1, false)
+		behind_area.set_collision_mask_value(2, true)
+		behind_area.set_collision_mask_value(3, false)
+		behind_area.set_collision_mask_value(4, false)
+		behind_area.set_collision_mask_value(5, true)
+		behind_area.set_collision_mask_value(6, false)
 	
-	if inside_controller:
-		inside_controller.set_collision_mask_value(1, false)
-		inside_controller.set_collision_mask_value(2, true)
-		inside_controller.set_collision_mask_value(3, false)
-		inside_controller.set_collision_mask_value(4, false)
-		inside_controller.set_collision_mask_value(5, true)
-		inside_controller.set_collision_mask_value(6, true)
+	if inside_area:
+		inside_area.set_collision_mask_value(1, false)
+		inside_area.set_collision_mask_value(2, true)
+		inside_area.set_collision_mask_value(3, false)
+		inside_area.set_collision_mask_value(4, false)
+		inside_area.set_collision_mask_value(5, true)
+		inside_area.set_collision_mask_value(6, false)

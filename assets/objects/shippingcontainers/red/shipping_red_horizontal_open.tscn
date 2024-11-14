@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cy3d8r1a31nxa" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredhorizontalinside.png" id="1_hi07p"]
 [ext_resource type="Script" path="res://scripts/shipping_container.gd" id="1_t40if"]
 [ext_resource type="Texture2D" uid="uid://dyjls83gqhfw0" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredhorizontalopen.png" id="2_3gfw3"]
-[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="3_qm271"]
-[ext_resource type="Script" path="res://scripts/opacity_inside_controller.gd" id="4_68upk"]
+[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="3_qm271"]
+[ext_resource type="Script" path="res://scripts/deprecated/opacity_inside_controller_DEPRECATED.gd" id="4_68upk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(80, 2.125)

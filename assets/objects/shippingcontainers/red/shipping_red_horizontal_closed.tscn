@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/shipping_container.gd" id="1_mai73"]
 [ext_resource type="Texture2D" uid="uid://b2r0ii8mskvgb" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingredhorizontalclosed.png" id="1_yc37e"]
-[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_qqgj0"]
+[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_qqgj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(80, 24.25)

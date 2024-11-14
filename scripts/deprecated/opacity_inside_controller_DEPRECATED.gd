@@ -1,5 +1,5 @@
-extends OpacityController
-class_name OpacityInsideController
+extends OpacityControllerDEPRECATED
+class_name OpacityInsideControllerDEPRECATED
 
 @export_group("General")
 @export var inside_sprite : Sprite2D

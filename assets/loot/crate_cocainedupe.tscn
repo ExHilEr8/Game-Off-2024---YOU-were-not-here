@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bw4mbkw822weo"]
+[gd_scene load_steps=10 format=3 uid="uid://b81qubddi2k5q"]
 
-[ext_resource type="Texture2D" uid="uid://bipfmw5q17sgf" path="res://assets/objects/crateopen.png" id="1_1n5re"]
-[ext_resource type="Texture2D" uid="uid://tsxufbg0d3r3" path="res://assets/objects/crate.png" id="1_moi7s"]
-[ext_resource type="Texture2D" uid="uid://dw582nmo51y6c" path="res://assets/loot/cratecocaine.png" id="1_xj8ey"]
-[ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="2_71art"]
-[ext_resource type="Script" path="res://scripts/crate.gd" id="2_c5k5p"]
-[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_snpug"]
-[ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable_component.tscn" id="3_27yhs"]
-[ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="4_qnlsi"]
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_lr1dk"]
+[ext_resource type="Texture2D" uid="uid://tsxufbg0d3r3" path="res://assets/objects/crate.png" id="2_gd4fr"]
+[ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="3_5lmw0"]
+[ext_resource type="Texture2D" uid="uid://bipfmw5q17sgf" path="res://assets/objects/crateopen.png" id="4_ao85h"]
+[ext_resource type="Texture2D" uid="uid://dw582nmo51y6c" path="res://assets/loot/cratecocaine.png" id="5_b585o"]
+[ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable_component.tscn" id="6_6558j"]
+[ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="7_vhi3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
 size = Vector2(14.1563, 8)
@@ -16,34 +15,32 @@ size = Vector2(14.1563, 8)
 size = Vector2(16, 10)
 
 [node name="CrateCocaine" type="Node2D" node_paths=PackedStringArray("crate", "crate_open", "crate_loot")]
-script = ExtResource("2_c5k5p")
+script = ExtResource("1_lr1dk")
 crate = NodePath("Crate")
 crate_open = NodePath("CrateOpen")
 crate_loot = NodePath("CrateCocaine")
 
 [node name="Crate" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-texture = ExtResource("1_moi7s")
+texture = ExtResource("2_gd4fr")
 
-[node name="InteractableComponent" parent="Crate" instance=ExtResource("2_71art")]
+[node name="InteractableComponent" parent="Crate" instance=ExtResource("3_5lmw0")]
 
 [node name="CrateOpen" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 1)
-texture = ExtResource("1_1n5re")
+texture = ExtResource("4_ao85h")
 
 [node name="CrateCocaine" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -3)
-texture = ExtResource("1_xj8ey")
+texture = ExtResource("5_b585o")
 
-[node name="LootableComponent" parent="CrateCocaine" node_paths=PackedStringArray("loot_component") instance=ExtResource("3_27yhs")]
-visible = false
+[node name="LootableComponent" parent="CrateCocaine" node_paths=PackedStringArray("loot_component") instance=ExtResource("6_6558j")]
 loot_component = NodePath("LootComponent")
 is_bag = false
 
-[node name="LootComponent" parent="CrateCocaine/LootableComponent" instance=ExtResource("4_qnlsi")]
-visible = false
+[node name="LootComponent" parent="CrateCocaine/LootableComponent" instance=ExtResource("7_vhi3p")]
 loot_name = "Cocaine"
 loot_value = 400000.0
 
@@ -62,7 +59,6 @@ shape = SubResource("RectangleShape2D_xk0kc")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, -96)
 collision_mask = 34
-script = ExtResource("2_snpug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 91)

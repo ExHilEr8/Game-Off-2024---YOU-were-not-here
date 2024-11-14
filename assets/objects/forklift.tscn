@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://i3vqtv4um1qn"]
 
 [ext_resource type="Texture2D" uid="uid://dxwx71lvq1krh" path="res://assets/objects/forklift.png" id="1_nid8v"]
-[ext_resource type="Script" path="res://scripts/opacity_controller.gd" id="2_mqrrm"]
+[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_mqrrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(22, 6.0625)
