@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://i3vqtv4um1qn"]
+[gd_scene load_steps=6 format=3 uid="uid://i3vqtv4um1qn"]
 
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="1_j56s3"]
 [ext_resource type="Texture2D" uid="uid://dxwx71lvq1krh" path="res://assets/objects/forklift.png" id="1_nid8v"]
-[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_mqrrm"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="3_7jaiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(22, 6.0625)
@@ -11,10 +12,17 @@ size = Vector2(22, 9.5)
 
 [node name="Forklift" type="Node2D"]
 
+[node name="OpacityController" parent="." node_paths=PackedStringArray("outer_sprite_tweeners", "behind_area") instance=ExtResource("1_j56s3")]
+outer_sprite_tweeners = [NodePath("../Sprite2D/TweenComponent")]
+behind_area = NodePath("../Area2D")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 use_parent_material = true
+scale = Vector2(1.01617, 1)
 texture = ExtResource("1_nid8v")
 offset = Vector2(0, 1)
+
+[node name="TweenComponent" parent="Sprite2D" instance=ExtResource("3_7jaiv")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 30
@@ -23,10 +31,8 @@ collision_mask = 30
 position = Vector2(7, 9)
 shape = SubResource("RectangleShape2D_lskki")
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
+[node name="Area2D" type="Area2D" parent="."]
 collision_mask = 22
-script = ExtResource("2_mqrrm")
-main_sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(7, 1.75)
