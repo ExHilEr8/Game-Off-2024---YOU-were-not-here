@@ -22,7 +22,6 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ldneh")]
-scale = Vector2(1.92378, 0.186956)
 
 [node name="BarrelN" parent="." instance=ExtResource("17_savni")]
 position = Vector2(-42, -93)
@@ -70,4 +69,4 @@ position = Vector2(-165, -36)
 position = Vector2(116, 39)
 
 [node name="ShippingBlueVerticalOpen" parent="." instance=ExtResource("17_lcgek")]
-position = Vector2(11, 28)
+position = Vector2(137, -29)

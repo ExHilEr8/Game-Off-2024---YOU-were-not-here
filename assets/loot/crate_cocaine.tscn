@@ -1,25 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://bw4mbkw822weo"]
+[gd_scene load_steps=12 format=3 uid="uid://bw4mbkw822weo"]
 
 [ext_resource type="Texture2D" uid="uid://bipfmw5q17sgf" path="res://assets/objects/crateopen.png" id="1_1n5re"]
 [ext_resource type="Texture2D" uid="uid://tsxufbg0d3r3" path="res://assets/objects/crate.png" id="1_moi7s"]
 [ext_resource type="Texture2D" uid="uid://dw582nmo51y6c" path="res://assets/loot/cratecocaine.png" id="1_xj8ey"]
 [ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="2_71art"]
 [ext_resource type="Script" path="res://scripts/crate.gd" id="2_c5k5p"]
-[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_snpug"]
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="2_ovx2h"]
 [ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable_component.tscn" id="3_27yhs"]
 [ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="4_qnlsi"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="5_rxjnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
 size = Vector2(14.1563, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_li6gt"]
-size = Vector2(16, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rog3"]
+size = Vector2(8.0625, 4.125)
 
-[node name="CrateCocaine" type="Node2D" node_paths=PackedStringArray("crate", "crate_open", "crate_loot")]
+[node name="CrateCocaine" type="Node2D" node_paths=PackedStringArray("opacity_controller", "lootable_component", "crate", "crate_open", "crate_loot")]
 script = ExtResource("2_c5k5p")
+opacity_controller = NodePath("OpacityController")
+lootable_component = NodePath("CrateCocaine/LootableComponent")
 crate = NodePath("Crate")
 crate_open = NodePath("CrateOpen")
 crate_loot = NodePath("CrateCocaine")
+
+[node name="OpacityController" parent="." node_paths=PackedStringArray("outer_sprite_tweeners", "behind_area") instance=ExtResource("2_ovx2h")]
+outer_sprite_tweeners = [NodePath("../Crate/TweenComponent"), NodePath("../CrateOpen/TweenComponent"), NodePath("../CrateCocaine/TweenComponent")]
+behind_area = NodePath("../Area2D")
 
 [node name="Crate" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
@@ -27,10 +34,15 @@ texture = ExtResource("1_moi7s")
 
 [node name="InteractableComponent" parent="Crate" instance=ExtResource("2_71art")]
 
+[node name="TweenComponent" parent="Crate" instance=ExtResource("5_rxjnx")]
+
 [node name="CrateOpen" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 1)
 texture = ExtResource("1_1n5re")
+
+[node name="TweenComponent" parent="CrateOpen" instance=ExtResource("5_rxjnx")]
+visible = false
 
 [node name="CrateCocaine" type="Sprite2D" parent="."]
 visible = false
@@ -47,6 +59,9 @@ visible = false
 loot_name = "Cocaine"
 loot_value = 400000.0
 
+[node name="TweenComponent" parent="CrateCocaine" instance=ExtResource("5_rxjnx")]
+visible = false
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 1)
 collision_mask = 30
@@ -60,15 +75,27 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_xk0kc")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1, -96)
-collision_mask = 34
-script = ExtResource("2_snpug")
+position = Vector2(0, 1)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 91)
-shape = SubResource("RectangleShape2D_li6gt")
+position = Vector2(-3, -5)
+shape = SubResource("RectangleShape2D_7rog3")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.03125, -5)
+shape = SubResource("RectangleShape2D_7rog3")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.96875, -8)
+shape = SubResource("RectangleShape2D_7rog3")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.0625, -8)
+shape = SubResource("RectangleShape2D_7rog3")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
 [connection signal="interacted" from="Crate/InteractableComponent" to="." method="_on_interactable_component_interacted"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

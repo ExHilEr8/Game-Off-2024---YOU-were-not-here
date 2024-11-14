@@ -111,8 +111,3 @@ debug_color = Color(0.492441, 0.57594, 0.274899, 0.42)
 position = Vector2(6.94334, 13.8042)
 shape = SubResource("RectangleShape2D_s8grq")
 debug_color = Color(0.494118, 0.576471, 0.27451, 0.419608)
-
-[connection signal="body_entered" from="Area2D" to="OpacityController" method="_behind_area_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="OpacityController" method="_behind_area_on_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="OpacityController" method="_inside_area_on_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="OpacityController" method="_inside_area_on_body_exited"]

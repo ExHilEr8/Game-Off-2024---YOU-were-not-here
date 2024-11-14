@@ -13,6 +13,7 @@ size = Vector2(22, 9.5)
 [node name="Forklift" type="Node2D"]
 
 [node name="OpacityController" parent="." node_paths=PackedStringArray("outer_sprite_tweeners", "behind_area") instance=ExtResource("1_j56s3")]
+scale = Vector2(0.950559, 1.01828)
 outer_sprite_tweeners = [NodePath("../Sprite2D/TweenComponent")]
 behind_area = NodePath("../Area2D")
 
@@ -38,6 +39,3 @@ collision_mask = 22
 position = Vector2(7, 1.75)
 shape = SubResource("RectangleShape2D_mnwqj")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,18 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://osqfebjxs57q"]
+[gd_scene load_steps=6 format=3 uid="uid://osqfebjxs57q"]
 
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="1_bpvsr"]
 [ext_resource type="Texture2D" uid="uid://tsxufbg0d3r3" path="res://assets/objects/crate.png" id="1_mamyj"]
-[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_248gr"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="3_n2888"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
 size = Vector2(14.1563, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li6gt"]
-size = Vector2(16, 10)
+size = Vector2(8.0625, 4.125)
 
 [node name="Crate" type="Node2D"]
 
+[node name="OpacityController" parent="." node_paths=PackedStringArray("outer_sprite_tweeners", "behind_area") instance=ExtResource("1_bpvsr")]
+outer_sprite_tweeners = [NodePath("../Sprite2D/TweenComponent")]
+behind_area = NodePath("../Area2D")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mamyj")
+
+[node name="TweenComponent" parent="Sprite2D" instance=ExtResource("3_n2888")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 30
@@ -26,15 +33,24 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_xk0kc")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1, -96)
-collision_mask = 4
-script = ExtResource("2_248gr")
-entered_opacity = 0.0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 91)
+position = Vector2(-3, -5)
 shape = SubResource("RectangleShape2D_li6gt")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.03125, -5)
+shape = SubResource("RectangleShape2D_li6gt")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.96875, -8)
+shape = SubResource("RectangleShape2D_li6gt")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.0625, -8)
+shape = SubResource("RectangleShape2D_li6gt")
+debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)

@@ -39,7 +39,7 @@ func _ready():
 		behind_area.body_entered.connect(_behind_area_on_body_entered)
 		behind_area.body_exited.connect(_behind_area_on_body_exited)
 	
-	if inside_area:
+	if inside_area:	
 		inside_area.body_entered.connect(_inside_area_on_body_entered)
 		inside_area.body_exited.connect(_inside_area_on_body_exited)
 
@@ -76,7 +76,7 @@ func _inside_area_on_body_exited(_body:Node2D):
 
 func _outside_sprite_tweeners_finished_after_inside_area_left():
 	# if player not in container anymore
-	if not is_overlapping(get_tree().get_root().get_node("Player"), inside_area.get_overlapping_bodies()):
+	if not is_overlapping(get_tree().get_root().get_node("Node").get_node("Player"), inside_area.get_overlapping_bodies()):
 		hide_inside_sprites()
 
 func show_inside_sprites():

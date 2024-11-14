@@ -10,7 +10,6 @@ func _ready():
 	if parent is Sprite2D:
 		sprite = parent
 	
-	tweener = create_tween()
 
 func modulate(color: Color, time: float, ease_type: Tween.EaseType, kill_tweener : bool = true):
 	if tweener and kill_tweener:
