@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://i3vqtv4um1qn"]
 
-[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="1_j56s3"]
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scenes/opacity_controller.tscn" id="1_j56s3"]
 [ext_resource type="Texture2D" uid="uid://dxwx71lvq1krh" path="res://assets/objects/forklift.png" id="1_nid8v"]
-[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="3_7jaiv"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scenes/tween_component.tscn" id="3_7jaiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
 size = Vector2(22, 6.0625)

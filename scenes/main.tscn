@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6wssjqpvgufy"]
+[gd_scene load_steps=19 format=3 uid="uid://b6wssjqpvgufy"]
 
 [ext_resource type="PackedScene" uid="uid://ckfr4aq7owr60" path="res://scenes/player.tscn" id="1_ldneh"]
 [ext_resource type="PackedScene" uid="uid://bgkwfndyt1pt4" path="res://assets/objects/shippingcontainers/blue/shipping_blue_vertical_open_TEST.tscn" id="17_lcgek"]
 [ext_resource type="PackedScene" uid="uid://pw4ct1p3n4sx" path="res://assets/objects/barrels/barrelN.tscn" id="17_savni"]
 [ext_resource type="PackedScene" uid="uid://cnf06r4r7e1g1" path="res://assets/objects/barrels/barrelNE.tscn" id="18_b2451"]
+[ext_resource type="PackedScene" uid="uid://brswr6eewwo7d" path="res://assets/security/floor_camera_down.tscn" id="18_rjvex"]
 [ext_resource type="PackedScene" uid="uid://dfkh2m7mcrea6" path="res://assets/objects/barrels/barrelS.tscn" id="19_8iovy"]
 [ext_resource type="PackedScene" uid="uid://b8j4ocdymoi8a" path="res://assets/objects/barrels/barrelSE.tscn" id="20_rcs7m"]
 [ext_resource type="PackedScene" uid="uid://ciuwht58fg3x4" path="res://assets/objects/barrels/barrel_open.tscn" id="21_njfp3"]
@@ -70,3 +71,6 @@ position = Vector2(76, 42)
 
 [node name="ShippingBlueVerticalOpen" parent="." instance=ExtResource("17_lcgek")]
 position = Vector2(137, -29)
+
+[node name="Node2D" parent="." instance=ExtResource("18_rjvex")]
+position = Vector2(-44, 4)

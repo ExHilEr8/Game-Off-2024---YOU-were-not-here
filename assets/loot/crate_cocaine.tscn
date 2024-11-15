@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dw582nmo51y6c" path="res://assets/loot/cratecocaine.png" id="1_xj8ey"]
 [ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="2_71art"]
 [ext_resource type="Script" path="res://scripts/crate.gd" id="2_c5k5p"]
-[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="2_ovx2h"]
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scenes/opacity_controller.tscn" id="2_ovx2h"]
 [ext_resource type="PackedScene" uid="uid://b348l68jgjjxf" path="res://assets/loot/lootable_component.tscn" id="3_27yhs"]
 [ext_resource type="PackedScene" uid="uid://d0khd6b2u8tmt" path="res://assets/loot/loot_component.tscn" id="4_qnlsi"]
-[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="5_rxjnx"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scenes/tween_component.tscn" id="5_rxjnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
 size = Vector2(14.1563, 8)
@@ -19,13 +19,13 @@ size = Vector2(8.0625, 4.125)
 [node name="CrateCocaine" type="Node2D" node_paths=PackedStringArray("opacity_controller", "lootable_component", "crate", "crate_open", "crate_loot")]
 script = ExtResource("2_c5k5p")
 opacity_controller = NodePath("OpacityController")
-lootable_component = NodePath("CrateCocaine/LootableComponent")
+lootable_component = NodePath("CrateLoot/LootableComponent")
 crate = NodePath("Crate")
 crate_open = NodePath("CrateOpen")
-crate_loot = NodePath("CrateCocaine")
+crate_loot = NodePath("CrateLoot")
 
 [node name="OpacityController" parent="." node_paths=PackedStringArray("outer_sprite_tweeners", "behind_area") instance=ExtResource("2_ovx2h")]
-outer_sprite_tweeners = [NodePath("../Crate/TweenComponent"), NodePath("../CrateOpen/TweenComponent"), NodePath("../CrateCocaine/TweenComponent")]
+outer_sprite_tweeners = [NodePath("../Crate/TweenComponent"), NodePath("../CrateOpen/TweenComponent"), NodePath("../CrateLoot/TweenComponent")]
 behind_area = NodePath("../Area2D")
 
 [node name="Crate" type="Sprite2D" parent="."]
@@ -44,23 +44,23 @@ texture = ExtResource("1_1n5re")
 [node name="TweenComponent" parent="CrateOpen" instance=ExtResource("5_rxjnx")]
 visible = false
 
-[node name="CrateCocaine" type="Sprite2D" parent="."]
-process_mode = 4
+[node name="CrateLoot" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -3)
 texture = ExtResource("1_xj8ey")
 
-[node name="LootableComponent" parent="CrateCocaine" node_paths=PackedStringArray("loot_component") instance=ExtResource("3_27yhs")]
+[node name="LootableComponent" parent="CrateLoot" node_paths=PackedStringArray("loot_component") instance=ExtResource("3_27yhs")]
+process_mode = 4
 visible = false
 loot_component = NodePath("LootComponent")
 is_bag = false
 
-[node name="LootComponent" parent="CrateCocaine/LootableComponent" instance=ExtResource("4_qnlsi")]
+[node name="LootComponent" parent="CrateLoot/LootableComponent" instance=ExtResource("4_qnlsi")]
 visible = false
 loot_name = "Cocaine"
 loot_value = 400000.0
 
-[node name="TweenComponent" parent="CrateCocaine" instance=ExtResource("5_rxjnx")]
+[node name="TweenComponent" parent="CrateLoot" instance=ExtResource("5_rxjnx")]
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

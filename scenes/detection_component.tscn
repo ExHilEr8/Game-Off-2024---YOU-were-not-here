@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://x5lp7djkevrq"]
+
+[ext_resource type="Script" path="res://scripts/detection_component.gd" id="1_xamf0"]
+
+[sub_resource type="Curve" id="Curve_7dhlv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.143198, 0.946963), -0.370376, -0.854714, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="DetectionComponent" type="Area2D" node_paths=PackedStringArray("collision_polygon")]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_xamf0")
+detection_curve = SubResource("Curve_7dhlv")
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1, 0, 2, 1, -1, 1)

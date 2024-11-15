@@ -13,10 +13,10 @@ var current_sprite
 var is_full : bool = false
 
 func _ready():
-	interactable.interacted.connect(interacted)
+	interactable.interacted.connect(dumpster_interacted)
 	current_sprite = dumpster_open_sprite
 
-func interacted():
+func dumpster_interacted(_interactor):
 	if current_sprite == dumpster_open_sprite or current_sprite == dumpster_full_sprite:
 		current_sprite = dumpster_closed_sprite
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://brswr6eewwo7d"]
+
+[ext_resource type="Texture2D" uid="uid://behw7rcl2c2kp" path="res://assets/security/floorcameradown.png" id="1_opekx"]
+[ext_resource type="PackedScene" uid="uid://x5lp7djkevrq" path="res://scenes/detection_component.tscn" id="2_7oojq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_opekx")
+
+[node name="FloorCameraDown" type="StaticBody2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FloorCameraDown"]
+polygon = PackedVector2Array(5, 8, 1, 1, 0, 1, -4, 8)
+
+[node name="DetectionComponent" parent="." instance=ExtResource("2_7oojq")]
+position = Vector2(0, 4)

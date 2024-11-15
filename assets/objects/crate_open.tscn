@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://n1ahkldwyoaf"]
 
 [ext_resource type="Texture2D" uid="uid://bipfmw5q17sgf" path="res://assets/objects/crateopen.png" id="1_ata4c"]
-[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="1_p1lxp"]
-[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="3_rcqm6"]
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scenes/opacity_controller.tscn" id="1_p1lxp"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scenes/tween_component.tscn" id="3_rcqm6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0kc"]
 size = Vector2(14.1563, 8)

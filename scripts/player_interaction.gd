@@ -18,7 +18,6 @@ func _on_area_entered(area:Area2D):
 	if area is Interactable:
 		interactables.append(area)
 	
-	print(interactables)
 
 func _on_area_exited(area:Area2D):
 	var exited_interactable_index = interactables.find(area)

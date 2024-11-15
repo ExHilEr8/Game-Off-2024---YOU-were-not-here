@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c425f3kdi1ony"]
+[gd_scene load_steps=10 format=3 uid="uid://c425f3kdi1ony"]
 
 [ext_resource type="Script" path="res://scripts/dumpster_controller.gd" id="1_7o46v"]
 [ext_resource type="Texture2D" uid="uid://c6f74oyw8r20g" path="res://assets/objects/dumpster.png" id="1_h14rw"]
-[ext_resource type="Script" path="res://scripts/deprecated/opacity_controller_DEPRECATED.gd" id="2_67gue"]
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scenes/opacity_controller.tscn" id="2_3kdqf"]
 [ext_resource type="Texture2D" uid="uid://cxh1csnffhncs" path="res://assets/objects/dumpsterfull.png" id="3_u80w3"]
 [ext_resource type="Texture2D" uid="uid://cth6s402mghe7" path="res://assets/objects/dumpsteropen.png" id="4_o00n6"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scenes/tween_component.tscn" id="4_yeh50"]
 [ext_resource type="PackedScene" uid="uid://vijo4nq41ltq" path="res://scenes/interactable_component.tscn" id="5_4p81r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lskki"]
@@ -20,9 +21,15 @@ dumpster_open_sprite = NodePath("DumpsterOpen")
 dumpster_closed_sprite = NodePath("DumpsterClosed")
 dumpster_full_sprite = NodePath("DumpsterFull")
 
+[node name="OpacityController" parent="." node_paths=PackedStringArray("outer_sprite_tweeners", "behind_area") instance=ExtResource("2_3kdqf")]
+outer_sprite_tweeners = [NodePath("../DumpsterOpen/TweenComponent"), NodePath("../DumpsterClosed/TweenComponent"), NodePath("../DumpsterFull/TweenComponent")]
+behind_area = NodePath("../Area2D")
+
 [node name="DumpsterOpen" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
 texture = ExtResource("4_o00n6")
+
+[node name="TweenComponent" parent="DumpsterOpen" instance=ExtResource("4_yeh50")]
 
 [node name="DumpsterClosed" type="Sprite2D" parent="."]
 visible = false
@@ -30,10 +37,14 @@ use_parent_material = true
 texture = ExtResource("1_h14rw")
 offset = Vector2(0, 1)
 
+[node name="TweenComponent" parent="DumpsterClosed" instance=ExtResource("4_yeh50")]
+
 [node name="DumpsterFull" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 1)
 texture = ExtResource("3_u80w3")
+
+[node name="TweenComponent" parent="DumpsterFull" instance=ExtResource("4_yeh50")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 30
@@ -46,10 +57,8 @@ shape = SubResource("RectangleShape2D_lskki")
 position = Vector2(5.20313, 5)
 shape = SubResource("RectangleShape2D_lskki")
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("main_sprite")]
-collision_mask = 4
-script = ExtResource("2_67gue")
-main_sprite = NodePath("../DumpsterOpen")
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5, -5)
@@ -62,6 +71,3 @@ shape = SubResource("RectangleShape2D_mnwqj")
 debug_color = Color(0.887957, 0.275738, 0.464366, 0.42)
 
 [node name="InteractableComponent" parent="." instance=ExtResource("5_4p81r")]
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

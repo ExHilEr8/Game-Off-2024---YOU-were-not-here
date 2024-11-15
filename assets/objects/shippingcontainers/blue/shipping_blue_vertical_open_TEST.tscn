@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/shipping_container.gd" id="1_4wgji"]
 [ext_resource type="Texture2D" uid="uid://3k6uo6pregjb" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingblueverticalinside.png" id="2_08p6s"]
-[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scripts/opacity_controller.tscn" id="2_cgjxl"]
+[ext_resource type="PackedScene" uid="uid://uempns2xyjcx" path="res://scenes/opacity_controller.tscn" id="2_cgjxl"]
 [ext_resource type="Texture2D" uid="uid://duryptumsjo37" path="res://assets/objects/shippingcontainers/shippingcontainerassets/shippingblueverticalopen.png" id="3_5p58g"]
-[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scripts/tween_component.tscn" id="3_63efg"]
+[ext_resource type="PackedScene" uid="uid://cmw1nmftgd5fd" path="res://scenes/tween_component.tscn" id="3_63efg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_555ws"]
 size = Vector2(2, 56)
