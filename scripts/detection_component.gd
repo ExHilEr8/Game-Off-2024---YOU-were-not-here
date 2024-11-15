@@ -1,20 +1,38 @@
 extends Area2D
 class_name DetectionComponent
 
-
-@export var detection_curve : Curve
+@export_group("General")
 @export var collision_polygon : CollisionPolygon2D
-@export var detection_area_size : int = 100
+@export var progress_bar : ProgressBar
 
+@export_group("Detection Parameters")
+@export var detection_curve : Curve
+@export var detection_area_size : int = 100
+@export var detection_buffer_frames : int = 20
+@export var detection_buffer_frames_reset_time_seconds : int = 3
+@export var detection_decay_per_frame : float = 0.75
+@export var detection_multiplier : float = 3.5
+
+var player
 var detected : bool = false
+
+var current_buffer_frames : int = 0 :
+	get: return current_buffer_frames
+	set(value):
+		current_buffer_frames = clamp(value, 0, detection_buffer_frames)
+		
 var current_detection : float = 0 :
 	get: return current_detection
 	set(value):
 		current_detection = clamp(value, 0.0, 100.0)
 
+
 signal player_detected
 
 func _ready():
+	player = get_tree().get_root().get_node("Node").get_node("Player")
+	self.body_exited.connect(_on_body_exited)
+
 	var polygon = collision_polygon.polygon
 	var offset = polygon[1] - polygon[0]
 
@@ -29,20 +47,33 @@ func _ready():
 
 	collision_polygon.polygon = polygon
 
-	print(offset)
 
 func _physics_process(delta):
-	if get_tree():
-		var player = get_tree().get_root().get_node("Node").get_node("Player")
+	progress_bar.value = current_detection
 
-		if player in get_overlapping_bodies():
-			var distance = (player.global_position - self.global_position).length() / detection_area_size
-			var distance_normalized = clamp(distance, 0.0, 1.0)
+	if player not in get_overlapping_bodies():
+		current_detection -= detection_decay_per_frame
 
-			current_detection = detection_curve.sample(distance_normalized)
-			print(current_detection)
+	else:
+		if current_buffer_frames < detection_buffer_frames:
+			current_buffer_frames += 1
+
+		else:
+			var distance = (self.global_position - player.global_position).length() / detection_area_size
+			current_detection += detection_curve.sample(clamp(distance, 0.0, 1.0)) * detection_multiplier
 		
+		if current_detection == 100:
+			player_detected.emit()
+	
+	print(current_detection)
+	
 
-func on_player_detect():
-	player_detected.emit()
+func _on_body_exited(body : Node2D):
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = detection_buffer_frames_reset_time_seconds
+	timer.start()
+	await timer.timeout
 
+	if player not in get_overlapping_bodies():
+		current_buffer_frames = 0

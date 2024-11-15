@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brswr6eewwo7d"]
+[gd_scene load_steps=4 format=3 uid="uid://brswr6eewwo7d"]
 
 [ext_resource type="Texture2D" uid="uid://behw7rcl2c2kp" path="res://assets/security/floorcameradown.png" id="1_opekx"]
 [ext_resource type="PackedScene" uid="uid://x5lp7djkevrq" path="res://scenes/detection_component.tscn" id="2_7oojq"]
+[ext_resource type="Curve" uid="uid://m51cpd8js4yc" path="res://assets/curves/default_detection_curve.tres" id="3_60uq8"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,3 +18,4 @@ polygon = PackedVector2Array(5, 8, 1, 1, 0, 1, -4, 8)
 
 [node name="DetectionComponent" parent="." instance=ExtResource("2_7oojq")]
 position = Vector2(0, 4)
+detection_curve = ExtResource("3_60uq8")
